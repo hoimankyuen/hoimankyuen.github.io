@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<title>
+    Hoi Man Yuen: Portfolio
+</title>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+        <nav>
+            <div class="name">Hoi Man Yuen</div>
+            <div class="links">
+                <a href="contact.html">Contact</a>
+                <!--
+                <a href="extra.html">Extra</a>
+                -->
+                <a href="about.html">About Me</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="index.html">Home</a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="center">
+                <div class="content">
+                    <h1>Portfolio</h1>
+                    <hr>
+                    <div class="centerizedtext">
+                        <p>From the day I learned Unity around ten years ago, I have been continuously working on a number of different games and projects, whether it be self-projects, school projects, or projects at work. Every time I contributed to the projects to the best of my abilities to make them as good and polished as possible. Here I proudly present a selection of the projects that I am personally fond of, and I will explain in detail what I have done and achieved during the development process.</p>
+                    </div>
+                    <hr>
+                    <br>
+                    <br>
+
+                    <!-- Club Grenade -->
+                    <h3>Club Grenade</h3>
+                    <div class="columnlayout">
+                        <div class="text">
+                            <p>Club Grenade is a fast-paced multiplayer lite action game about defeating enemies with grenades and throwables only. The players must cooperate and fight through waves of enemies through the level, or be defeated by the enemy when within chaotic friendly fire. The game was inspired by Overcooked and its chaotic yet fun gameplay.</p>
+                            <p>The game was a school project developed using Unity by a small team of 3 people that I led. The project was the winner of the Best Project Award and the Dean's Fund Award among all other projects from the engineering department. </p>
+                            <p>Project website can be accessed <a href="https://innoacademy.engg.hku.hk/club-grenade/">here</a></p>
+                            <h4>Accomplishment</h4>
+                            <ul>
+                                <li>Directed and led the whole project, guided and mentored members with zero experence throughout the whole development process.</li>
+                                <li>Created various shader including cel-shading toon shader and force field shader.</li>
+                                <li>Designed and createe most 2D and 3D assets using Photoshop and Blender.</li>
+                                <li>Designed structure and events of the entire level.</li>
+                                <li>Implemented input mode auto detection system to faciliate quick multiplayer joining.</li>
+
+                            </ul>
+                        </div>
+                        <div class="media">
+                            <div class="videowrapper">
+                                <iframe src="https://www.youtube.com/embed/sYWnUHE6DBE"></iframe> 
+                            </div>
+                            <img src="images/clubgrenade/screenshot1.jpg" alt="Club Grenade Screenshot 1">
+                            <img src="images/clubgrenade/screenshot2.jpg" alt="Club Grenade Screenshot 2">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <!-- Dicing Heros -->
+                    <h3 class="rightaligned">Dicing Heros</h3>
+                    <div class="columnlayout">
+                        <div class="media">
+                            <div class="videowrapper">
+                                <iframe src="https://www.youtube.com/embed/BROf6Yzeqrk"></iframe> 
+                            </div>
+                            <img src="images/dicingheros/movement.png" alt="Dicing Hero Screenshot 1">
+                            <img src="images/dicingheros/dicethrow.png" alt="Dicing Hero Screenshot 2">
+                        </div>
+                        <div class="text">
+                            <p>Dicing Heros is a turn-based strategy game about fantasy battles, with the twist that both dice and pieces exist in the same physical space. It is inspired by how the dice thrown in a board game may accidentally interact with other pieces on the board. The game puts the player in command of a team of different units with different stats and abilities, along with a few dice. Dice can be used to further enhance unit stats, and is key to defeat the enemy team.</p>
+                            <p>This game is developed using Unity, and is an experiment to explore the concept of a gridless chess-like strategy game. Physics introduce cases where pieces may be pushed off the grid by thrown dice, adding another layer of variables and complexity to the game. </p>
+                            <p>Project repo can be accessed <a href="https://github.com/hoimankyuen/DicingHeros">here</a></p>
+                            <h4>Accomplishment</h4>
+                            <ul>
+                                <li>Created a gameplay system that allows grid-base strategy game to works in an gridless manner.</li>
+                                <li>Created an enemy AI that can maximize battle effectiveness given the current dice combination and board situation.</li>
+                                <li>Utilized async computation and performed optimization to increase AI performance and prevent lag spikes.</li>
+                                <li>Implemented the AI to use a similar input system as the player, and decoupled both systems to increase readability and maintainability.</li>
+                                <li>Implemented a centralized finite state machine that drives the whole game, </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <!-- Plane Tactics -->
+                    <h3>Plane Tactics</h3>
+                    <div class="columnlayout">
+                        <div class="text">
+                            <p>Plane Tactics is an experimental turn-based game about aircraft battles. The game puts the player in command of a plane squad, of which contains various types of aircrafts, to fight against enemy aircrafts. Aircraft movement is highly dependent of the previous movement, creating a dogfight feel to the game.</p>
+                            <p>This game is developed using Unity and is an experiment to explore the concept of gridless chess-like tatics games, and the plane theme add a further concept of forced movement to add more complexity and depth.</p>
+                            <p>Project repo can be accessed <a href="https://github.com/hoimankyuen/PlaneTactics">here</a></p>
+                            <h4>Accomplishment</h4>
+                            <ul>
+                                <li>Designed the whole gridless gameplay and the continuous movement system.</li>
+                                <li>Created a shader to procedually draw the triangular mock grid with various customizing options.</li>
+                                <li>Created system for procedually generate mesh that can accurate represent the movement area, move path, attack range and contrails.</li>
+                                <li>Created UI component for accruately draw circular buttons with uniform gaps.</li>
+                                <li>Created minimap that shows all current planes and camera view.</li>
+
+                            </ul>
+                        </div>
+                        <div class="media">
+                            <div class="videowrapper">
+                                <iframe src="https://www.youtube.com/embed/EWCiGYmCKn8"></iframe> 
+                            </div>
+                            <img src="images/planetactics/title.png" alt="Plane Tactics Screenshot 1">
+                            <img src="images/planetactics/gameplay.png" alt="Plane Tactics Screenshot 2">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+  
+                    <!-- Accelerando -->
+                    <h3 class="rightaligned">Accelerando</h3>
+                    <div class="columnlayout">
+                        <div class="media">
+                            <div class="videowrapper">
+                                <iframe src="https://www.youtube.com/embed/nXg0vDC6oZo"></iframe> 
+                            </div>
+                            <img src="images/accelerando/screenshot1.png" alt="Accelerando Screenshot 1">
+                            <img src="images/accelerando/screenshot2.png" alt="Accelerando Screenshot 2">
+                        </div>
+                        <div class="text">
+                            <p>Accelerando is a mobile rhythm game designed to be played on a touch screen. It challenges the precision of the player to successfully hit all notes in the correct timing. The game borrows traditional rhythm game elements such as notes and timing lines, with the feel of flying through a space tunnel when playing. The flying effect is achieved by twisting the note path and turning the screen in response to the player input.</p>
+                            <p>This game was a school project developed using Unity. It was inspired by a number of rhythm games I played during development such as Reflec Beat and Sound Votex. Alongside the game, an auxiliary software was built to support streamlined level creation.</p>
+                            <h4>Accomplishment</h4>
+                            <ul>
+                                <li>Found and implemented a way to make 2D elements seems like moving in the 3D space.</li>
+                                <li>Designed a system that allows level and music to be imported as special resource files into the game, removing to need to do that in the Unity Editor.</li>
+                                <li>Created an auxiliary software that allows level designer to use a GUI to create level files. The auxiliary software is developed using C# window form.</li>
+                                <li>Researched and implemented ways to deal with audio latency on older device by introducing audio offset.</li>
+                                <li>Personally written two pieces of music for use in the game.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <!-- Rebuilding the Lost Dimension -->
+                    <h3>Rebuilding the Lost Dimension</h3>
+                    <div class="columnlayout">
+                        <div class="text">
+                            <p>Rebuilding the Lost Dimension is a two-player co-op puzzle game. Set in the day before the demolition of the Walled City of Kowloon, both players were tasked to record the last moment of the city before it was destroyed. Both players play in a vastly different way, where one player is walking within the maze-like walled city finding objectives, and the other player looks at the map separately waiting for the first player to report objective locations. Both players must communicate and work together to succeed in the task within the time limit.</p>
+                            <p>The game is a school project developed using Unity. It was hugely inspired by Keep Talking and Nobody Explodes in a way that both players cannot see what the other player can see, and they require information from the other player to complete the task at hand. The game also utilized mobile VR using Google cardboard, which provides the player in the walled city with a true sense of immersion.  </p>
+                            <h4>Accomplishment</h4>
+                            <ul>
+                                <li>Created an online multiplayer co-operate system that allows both game client communicates information using Unity Networking</li>
+                                <li>Designed story and gameplay elements of the game.</li>
+                                <li>Created the map according to a portion of the real life map of the walled city.</li>
+                                <li>Performed extensive gameplay tests to ensure time limit is tight but fair.</li>
+                            </ul>
+                        </div>
+                        <div class="media">
+                            <img src="images/rebuilding/screenshot1.png" alt="Rebuilding the Lost Dimension Screenshot 1">
+                            <img src="images/rebuilding/screenshot2.png" alt="Rebuilding the Lost Dimension Screenshot 2">
+                            <img src="images/rebuilding/screenshot3.png" alt="Rebuilding the Lost Dimension Screenshot 3">
+                        </div>
+                     </div>
+                     <br>
+                     <br>
+                </div>
+            </div>
+            <div class="bottom">
+                © 2023 by Hoi Man Yuen. All Rights Reserved.
+            </div>
+        </main>
+    </body>
+</html>

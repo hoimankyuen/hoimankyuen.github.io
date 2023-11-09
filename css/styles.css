@@ -1,0 +1,222 @@
+body {
+    background-color: darkblue;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Tahoma, Helvetica, sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+}
+
+@media only screen and (max-width: 1000px) {
+    nav {
+        overflow: hidden;
+        color: white;
+        background-color: black;
+
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+
+        display: grid;
+        grid-template-rows: auto auto;
+        align-items: end;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    nav {
+        overflow: hidden;
+        color: white;
+        background-color: black;
+
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: end;
+    }
+}
+nav .name {   
+    display: block;
+    float: left;
+    margin: 5px 5px;
+    padding: 5px 20px;
+
+    font-family: Georgia, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+}
+nav .links a {
+    color: white;
+    display: block;
+    float: right;
+    height: 50%;
+    margin: 10px 5px 10px 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+nav .links a:hover {
+    background-color: grey;
+}
+nav .links a.active {
+    background-color: darkblue;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        margin: 130px 0px 0px 0px;
+    }
+    main {
+        min-height: calc(100vh - 130px);
+    }
+}
+@media only screen and (min-width: 1000px) {
+    body {
+        margin: 70px 0px 0px 0px;
+    }
+    main {
+        min-height: calc(100vh - 70px);
+    }
+}
+main {
+    background-color: darkgrey;
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+}
+main .center{
+    display: grid;
+    grid-template-columns: minmax(auto, 1200px);
+    justify-content: center;
+}
+main .center .content {
+    color: white;
+    background-color: #202020;
+    margin: 0px 50px 0px 50px;
+    padding: 0px 30px 0px 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+main .center .content h1, h2 {
+    text-align: center;
+}@media only screen and (max-width: 1000px) {
+    main .center .content .columnlayout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    main .center .content .columnlayout .text {
+        grid-row: 2;
+    }
+    main .center .content .columnlayout .media {
+        grid-row: 1;
+    }
+    main .center .content .columnlayout img {
+        width: 100%;
+        margin: 20px 0px;
+        border-radius: 8px;
+    }
+    main .center .content .columnlayout .videowrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+        margin: 20px 0px;
+    }
+    main .center .content .columnlayout .videowrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    main .center .content .columnlayout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        column-gap: 50px;
+    }
+    main .center .content .columnlayout img {
+        width: 100%;
+        margin: 20px 20px 20px 0px;
+        border-radius: 8px;
+    }
+    main .center .content .columnlayout .videowrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+        margin: 20px 20px 20px 0px;
+    }
+    main .center .content .columnlayout .videowrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    main .center .content .rightaligned {
+        text-align: right;
+    }
+}
+main .center .content .banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+main .center .content .verticalcenterblock {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+main .center .content .centerizedtext {
+    padding: 0px 15% 0px 15%;
+}
+main .center .content a {
+    color: white;
+    font-weight: bold;
+
+}
+main .center .content .photo {
+    float: left; 
+    margin: 30px; 
+    border-radius: 16px;
+    width: 30%;
+}
+main .center .content table {
+    margin-left: auto;
+    margin-right: auto;
+}
+main .center .content table td {
+    height: 36px;
+    padding: 5px 5px 5px 5px;
+}
+main .center .content table .heightalign {
+    height:24px;
+    width: auto;
+}
+main .center .content table .widthalign {
+    width:24px;
+}
+main .bottom {
+    overflow: hidden;
+    color: grey;
+    background-color: black;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+
+
