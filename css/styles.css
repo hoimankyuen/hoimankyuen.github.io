@@ -9,7 +9,6 @@ body {
 }
 
 /* navigation bar */
-
 nav {
     --text-color: #ffffff;
 
@@ -159,6 +158,24 @@ main .center .content .anchoricons img:hover {
         position:relative; 
         top:-140px;
     }
+    main .center .content .titleleft {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+    }
+    main .center .content .titleleft img {
+        width: 64px;
+    }
+    main .center .content .titleright {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+    }
+    main .center .content .titleright img {
+        width: 64px;
+    }
     main .center .content .columnlayout {
         display: grid;
         grid-template-columns: 1fr;
@@ -199,6 +216,27 @@ main .center .content .anchoricons img:hover {
     }
     main .center .content .rightaligned {
         text-align: right;
+        margin-left: auto;
+        margin-right: 0;
+    }
+    main .center .content .titleleft {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+    }
+    main .center .content .titleleft img {
+        width: 64px;
+    }
+    main .center .content .titleright {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+        justify-content: end;
+    }
+    main .center .content .titleright img {
+        width: 64px;
     }
     main .center .content .columnlayout {
         display: grid;
