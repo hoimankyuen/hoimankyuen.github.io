@@ -1,5 +1,3 @@
-//import data from "./data.js";
-
 const clubGrenadeData = 
 {
     id: "clubgrenade",
@@ -143,12 +141,12 @@ function generateEntryBlock(entry, index)
     }
 }
 
-import data from "./data.js";
-
-entryList = data;
-for (let i = 0; i < entryList.length; i++) 
+export function generateEntries(entryList)
 {
-    entry = entryList[i];
-    generateEntryAnchorIcons(entry);
-    generateEntryBlock(entry, i);
+    for (let i = 0; i < entryList.length; i++) 
+    {
+        let entry = entryList[i];
+        generateEntryAnchorIcons(entry);
+        generateEntryBlock(entry, i);
+    }
 }

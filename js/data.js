@@ -235,7 +235,7 @@ const templateData =
     ]
 };
 
-const data = [
+export let data = [
     clubGrenadeData,
     dicingHerosData,
     planeTacticsData,
@@ -245,4 +245,4 @@ const data = [
     chromomatchData
 ];
 
-export default data;
+export let name = "David";
