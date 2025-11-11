@@ -143,8 +143,12 @@ function generateEntryBlock(entry, index)
     }
 }
 
-for (let i = 0; i < dataTest.length; i++) 
+import data from "./data.js";
+
+entryList = data;
+for (let i = 0; i < entryList.length; i++) 
 {
-    generateEntryAnchorIcons(data[i]);
-    generateEntryBlock(data[i], i);
+    entry = entryList[i];
+    generateEntryAnchorIcons(entry);
+    generateEntryBlock(entry, i);
 }
