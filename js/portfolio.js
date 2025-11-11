@@ -1,6 +1,7 @@
 //import data from "./data.js";
 
-const clubGrenadeData = {
+const clubGrenadeData = 
+{
     id: "clubgrenade",
     name: "Club Grenade",
     icon: "images/clubgrenade/icon.png",
@@ -34,143 +35,103 @@ const data = [
     clubGrenadeData
 ];
 
-function generateEntryBlock(entry, index)
-{
-    const main = document.querySelector("div .entries");
-    
-    main.append(document.createComment(entry.name));
-
-    // inner div
-    const divMain = document.createElement("div");
-    main.append(divMain);
-
-    // anchor
-    const aAnchor = document.createElement("a");
-    aAnchor.setAttribute("class", "offsetanchor");
-    aAnchor.setAttribute("id", entry.id);
-    divMain.append(aAnchor);
-
-    // title block
-    const divTitle = document.createElement("div");
-    divTitle.setAttribute("class", index % 2 == 0 ? "titleleft" : "titleright");
-    divMain.append(divTitle);
-
-    const imgTitleImage = document.createElement("img");
-    imgTitleImage.setAttribute("src", entry.icon);
-    divTitle.append(imgTitleImage);
-
-    const h3TitleText = document.createElement("h3");
-    h3TitleText.innerHTML = entry.name;
-    divTitle.append(h3TitleText);
-
-    // column layout
-    const divColumnLayout = document.createElement("div");
-    divColumnLayout.setAttribute("class", "columnlayout");
-    divMain.append(divColumnLayout);
-
-    // text block
-    const divText = document.createElement("div");
-    divText.setAttribute("class", "text");
-    divColumnLayout.append(divText);
-
-    for (let i = 0; i < entry.descriptions.length; i++) 
-    {
-        const p = document.createElement("p");
-        p.innerHTML = entry.descriptions[i];
-        divText.append(p);
-    }
-
-    for (let i = 0; i < entry.links.length; i++) 
-    {
-        const p = document.createElement("p");
-        switch (entry.links[i].linktype)
-        {
-            case "game":
-                p.innerHTML = "Playable game can be accessed ";
-                break;
-            case "webpage":
-                p.innerHTML = "Project website can be accessed ";
-                break;
-            case "repo":
-                p.innerHTML = "Project repo can be accessed ";
-                break;
-            default:
-                break;
-        }
-        divText.append(p);
-
-        const a = document.createElement("a");
-        a.setAttribute("href", entry.links[i].link);
-        a.innerHTML = "here";
-        p.append(a);
-    }
-    
-    if (entry.accomplishments.length > 0)
-    {
-        const h4Accomp = document.createElement("h4");
-        h4Accomp.innerHTML = "Accomplishments";
-        divText.append(h4Accomp);
-
-        const ul = document.createElement("ul");
-        divText.append(ul);
-        for (let i = 0; i < entry.accomplishments.length; i++)
-        {
-            const li = document.createElement("li");
-            li.innerHTML = entry.accomplishments[i];
-            ul.append(li);
-        }
-    }
-
-    const divTop = document.createElement("div");
-    divText.append(divTop);
-
-    const aTop = document.createElement("a");
-    aTop.setAttribute("href", "#top");
-    aTop.innerHTML = "&#x25B2; Top";
-    divTop.append(aTop);
-
-    // media block
-    const divMedia = document.createElement("div");
-    divMedia.setAttribute("class", "media");
-    divColumnLayout.append(divMedia);
-
-    for (let i = 0; i < entry.videos.length; i++)
-    {
-        const div = document.createElement("div");
-        div.setAttribute("class", "videowrapper");
-        divMedia.append(div);
-
-        const iframe = document.createElement("iframe");
-        iframe.setAttribute("src", entry.videos[i]);
-        div.append(iframe);
-    }
-
-    for (let i = 0; i < entry.screenshots.length; i++)
-    {
-        const img = document.createElement("img");
-        img.setAttribute("src", entry.screenshots[i]);
-        img.setAttribute("alt", entry.name + " Screenshot " + (i + 1));
-        divMedia.append(img);
-    }
-
-    // spacer
-    const br = document.createElement("br");
-    divMain.append(br);
-    divMain.append(br);
-}
-
 function generateEntryAnchorIcons(entry)
 {
     const main = document.querySelector("div .anchoricons");
+    const template = document.getElementById("templateanchoricon");
+    const clone = template.cloneNode(true);
+    clone.removeAttribute("id");
+    clone.hidden = false;
+    main.appendChild(clone);
 
-    const a = document.createElement("a");
-    a.setAttribute("href", "#" + entry.id);
-    main.append(a);
+    clone.querySelector(".anchorlink").setAttribute("href", "#" + entry.id);
+    clone.querySelector(".anchorIcon").setAttribute("src", entry.icon);
+    clone.querySelector(".anchorIcon").setAttribute("alt", entry.name + " Icon");
+}
 
-    const img = document.createElement("img");
-    img.setAttribute("src", entry.icon);
-    img.setAttribute("alt", entry.name + " Icon");
-    main.append(img);
+function generateEntryBlock(entry, index)
+{
+    const main = document.querySelector("div .entries");
+    const template = document.getElementById("templateentry");
+    const clone = template.cloneNode(true);
+    clone.removeAttribute("id");
+    clone.hidden = false;
+    main.appendChild(clone);
+
+    // title
+    clone.querySelector(".offsetanchor").setAttribute("id", entry.id);
+    clone.querySelector(".titleleft").setAttribute("class", index % 2 == 0 ? "titleleft" : "titleright");
+    clone.querySelector(".entryicon").setAttribute("src", entry.icon);
+    clone.querySelector(".entrytitle").textContent = entry.name;
+    
+
+    // descriptions
+    const descriptionTemplate = clone.querySelector(".entrydescription");
+    for (let i = 0; i < entry.descriptions.length; i++) 
+    {
+        const descriptionClone = descriptionTemplate.cloneNode(true);
+        descriptionClone.textContent = entry.descriptions[i];
+        descriptionTemplate.parentElement.appendChild(descriptionClone);
+    }
+    descriptionTemplate.hidden = true;
+
+    // links
+    const linkTemplate = clone.querySelector(".entrylink");
+    for (let i = 0; i < entry.links.length; i++) 
+    {
+        const linkClone = linkTemplate.cloneNode(true);
+
+        switch (entry.links[i].linktype)
+        {
+            case "game":
+                linkClone.querySelector(".entrylinkprefix").textContent = "Playable game can be accessed at:";
+                break;
+            case "webpage":
+                linkClone.querySelector(".entrylinkprefix").textContent = "Project website can be accessed at:";
+                break;
+            case "repo":
+                linkClone.querySelector(".entrylinkprefix").textContent = "Project repo can be accessed at:";
+                break;
+            default:
+                linkClone.querySelector(".entrylinkprefix").textContent = "Invalid ";
+                break;
+        }
+        linkClone.querySelector(".entrylinksuffix").setAttribute("href", entry.links[i].link);
+        linkClone.querySelector(".entrylinksuffix").textContent = entry.links[i].link;
+        linkTemplate.parentElement.appendChild(linkClone);
+    }
+    linkTemplate.hidden = true;
+
+    // descriptions
+    const accomplishmentTemplate = clone.querySelector(".entryaccomplishment");
+    for (let i = 0; i < entry.accomplishments.length; i++) 
+    {
+        const accomplishmentClone = accomplishmentTemplate.cloneNode(true);
+        accomplishmentClone.textContent = entry.accomplishments[i];
+        accomplishmentTemplate.parentElement.appendChild(accomplishmentClone);
+    }
+    accomplishmentTemplate.hidden = true;
+
+    // videos
+    const videoTemplate = clone.querySelector(".videowrapper");
+    for (let i = 0; i < entry.videos.length; i++) 
+    {
+        const videoClone = videoTemplate.cloneNode(true);
+        videoClone.querySelector("iframe").setAttribute("src", entry.videos[i]);
+        videoTemplate.parentElement.appendChild(videoClone);
+    }
+    videoTemplate.hidden = true;
+
+    // screenshots
+    const screenshotTemplate = clone.querySelector(".entryscreenshot");
+    for (let i = 0; i < entry.screenshots.length; i++) 
+    {
+        const screenshotClone = screenshotTemplate.cloneNode(true);
+        screenshotClone.setAttribute("src", entry.screenshots[i]);
+        screenshotClone.setAttribute("alt", entry.name + " Screenshot " + (i + 1));
+        screenshotTemplate.parentElement.appendChild(screenshotClone);
+    }
+    screenshotTemplate.hidden = true;
 }
 
 for (let i = 0; i < data.length; i++) 
