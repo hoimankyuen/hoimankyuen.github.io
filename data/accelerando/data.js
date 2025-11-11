@@ -3,6 +3,9 @@ export let data =
     id: "accelerando",
     name: "Accelerando",
     icon: "/data/accelerando/icon.png",
+    platforms: [
+        "android"
+    ],
     descriptions: [
         "Accelerando is a mobile rhythm game designed to be played on a touch screen. It challenges the precision of the player to successfully hit all notes in the correct timing. The game borrows traditional rhythm game elements such as notes and timing lines, with the feel of flying through a space tunnel when playing. The flying effect is achieved by twisting the note path and turning the screen in response to the player input.",
         "This game was a school project developed using Unity. It was inspired by a number of rhythm games I played during development such as Reflec Beat and Sound Votex. Alongside the game, an auxiliary software was built to support streamlined level creation."

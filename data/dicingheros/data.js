@@ -3,6 +3,9 @@ export let data =
     id: "dicingheros",
     name: "Dicing Heros",
     icon: "/data/dicingheros/icon.png",
+    platforms: [
+        "windows"
+    ],
     descriptions: [
         "Dicing Heros is a turn-based strategy game about fantasy battles, with the twist that both dice and pieces exist in the same physical space. It is inspired by how the dice thrown in a board game may accidentally interact with other pieces on the board. The game puts the player in command of a team of different units with different stats and abilities, along with a few dice. Dice can be used to further enhance unit stats, and is key to defeat the enemy team.",
         "This game is developed using Unity, and is an experiment to explore the concept of a gridless chess-like strategy game. Physics introduce cases where pieces may be pushed off the grid by thrown dice, adding another layer of variables and complexity to the game."

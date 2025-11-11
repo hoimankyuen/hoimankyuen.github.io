@@ -3,6 +3,9 @@ export let data =
     id: "planetactics",
     name: "Plane Tactics",
     icon: "/data/planetactics/icon.png",
+    platforms: [
+        "windows"
+    ],
     descriptions: [
         "Plane Tactics is an experimental turn-based game about aircraft battles. The game puts the player in command of a plane squad, of which contains various types of aircrafts, to fight against enemy aircrafts. Aircraft movement is highly dependent of the previous movement, creating a dogfight feel to the game.",
         "This game is developed using Unity and is an experiment to explore the concept of gridless chess-like tatics games, and the plane theme add a further concept of forced movement to add more complexity and depth."

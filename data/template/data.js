@@ -1,8 +1,14 @@
-export let templateData = 
+export let data = 
 {
     id: "template",
     name: "Name",
     icon: "/data/template/icon.png",
+    platforms: [
+        "android",
+        "ios",
+        "windows",
+        "webgl"
+    ],
     descriptions: [
         "description",
         "description"
