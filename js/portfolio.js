@@ -31,7 +31,8 @@ const clubGrenadeData =
     ]
 };
 
-const data = [
+const dataTest = [
+    clubGrenadeData,
     clubGrenadeData
 ];
 
@@ -102,7 +103,7 @@ function generateEntryBlock(entry, index)
     }
     linkTemplate.hidden = true;
 
-    // descriptions
+    // accomplishments
     const accomplishmentTemplate = clone.querySelector(".entryaccomplishment");
     for (let i = 0; i < entry.accomplishments.length; i++) 
     {
@@ -132,9 +133,17 @@ function generateEntryBlock(entry, index)
         screenshotTemplate.parentElement.appendChild(screenshotClone);
     }
     screenshotTemplate.hidden = true;
+
+    // aligment
+    if (index % 2 == 1)
+    {
+        clone.querySelector(".leftaligned").setAttribute("class", "rightaligned");
+        clone.querySelector('.text').style.order = 2;
+        clone.querySelector('.media').style.order = 1;
+    }
 }
 
-for (let i = 0; i < data.length; i++) 
+for (let i = 0; i < dataTest.length; i++) 
 {
     generateEntryAnchorIcons(data[i]);
     generateEntryBlock(data[i], i);
