@@ -86,10 +86,10 @@ function generateEntryBlock(entry, index)
                 linkClone.querySelector(".entrylinkprefix").textContent = "Playable game can be accessed at:";
                 break;
             case "webpage":
-                linkClone.querySelector(".entrylinkprefix").textContent = "Project website can be accessed at:";
+                linkClone.querySelector(".entrylinkprefix").textContent = "Website can be accessed at:";
                 break;
             case "repo":
-                linkClone.querySelector(".entrylinkprefix").textContent = "Project repo can be accessed at:";
+                linkClone.querySelector(".entrylinkprefix").textContent = "Project repository can be accessed at:";
                 break;
             default:
                 linkClone.querySelector(".entrylinkprefix").textContent = "Invalid ";

@@ -21,6 +21,8 @@ import {data as clubGrenadeData} from "/data/clubgrenade/data.js";
 import {data as rebuildingData} from "/data/rebuilding/data.js";
 import {data as accelerandoData} from "/data/accelerando/data.js";
 
+import {data as xploroData} from "/data/xploro/data.js";
+import {data as navalFrontlineData} from "/data/navalfrontline/data.js";
 import {data as shotNViralData} from "/data/shotnviral/data.js";
 import {data as chromomatchData} from "/data/chromomatch/data.js";
 
@@ -31,9 +33,11 @@ export let data = [
     remoteStrandingData,
     clubGrenadeData,
     alkimiaShadowingData,
+    xploroData,
     budgetShopData,
     smocData,
     fairyEdibleData,
+    navalFrontlineData,
     accelerandoData,
     rebuildingData,
     shotNViralData,

@@ -7,7 +7,7 @@ export let data =
         "ios"
     ],
     descriptions: [
-        "Chromomatch is a VR matching puzzle game in which the player matches all 23 pairs of colour-coded free-floating chromosomes within the time limit, challenging the memory and observation skills of the player. The game was developed using Unity as an entertainment piece in a technology expo booth and was intended to be played using Google Cardboard."
+        "Chromomatch was developed when I was working as an intern in Versitech Ltd. It is a VR matching puzzle game in which the player matches all 23 pairs of colour-coded free-floating chromosomes within the time limit, challenging the memory and observation skills of the player. The game was developed using Unity as an entertainment piece in a technology expo booth and was intended to be played using Google Cardboard."
     ],
     links: [
     ],
