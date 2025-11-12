@@ -130,11 +130,11 @@ main .center .content .verticalcenterblock {
     transform: translate(-50%, -50%);
 }
 
-/* content (portfolio)*/
-main .center .content .centerizedtext {
+/* content (portfolio top)*/
+.portfolio .centerizedtext {
     padding: 0px 15% 0px 15%;
 }
-main .center .content .anchoricons {
+.portfolio .anchoricons {
     margin: 20px 0px 20px 0px;
 
     display: flex;
@@ -143,17 +143,144 @@ main .center .content .anchoricons {
     align-items: center;
     gap: 20px 20px;
 }
-main .center .content .anchoricons img {
+.portfolio .anchorIcon {
     width: 50px;
     padding-top: 20px;
     padding-bottom: 0px;
     transition: padding 0.1s;
 }
-main .center .content .anchoricons img:hover {
+.portfolio .anchorIcon:hover {
     padding-top: 0px;
     padding-bottom: 20px;
 }
-.overlay {
+
+/* content (portfolio entries)*/
+@media only screen and (max-width: 1000px) {
+    .portfolio .offsetanchor {
+        position:relative; 
+        top:-140px;
+    }
+
+    .portfolio .title {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+    }
+    .portfolio .titleinversed {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+    }
+    .portfolio .entryicon {
+        width: 64px;
+    }
+
+    .portfolio .columnlayout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .portfolio .videowrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9*/ 
+        margin: 20px 0px
+    }
+    .portfolio .entryvideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        border: none;
+        box-shadow: none;
+    }
+    .portfolio .entryscreenshot {
+        width: 100%;
+        margin: 20px 0px;
+        border-radius: 16px;
+    }
+
+}
+@media only screen and (min-width: 1000px) {
+    .portfolio .offsetanchor {
+        position:relative; 
+        top:-80px;
+    }
+
+    .portfolio .title {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+    }
+    .portfolio .titleinversed {
+        display: grid;
+        grid-template-columns: 64px fit-content(10px);
+        column-gap: 20px;
+        white-space: pre;
+        justify-content: end;
+    }
+    .portfolio .entryicon {
+        width: 64px;
+    }
+
+    .portfolio .columnlayout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        column-gap: 50px;
+    }
+    .portfolio .textcolumn {
+        grid-column: span 3;
+        order: 0;
+    }
+    .portfolio .textcolumninversed {
+        grid-column: span 3;
+        order: 1;
+    }
+    .portfolio .mediacolumn {
+        grid-column: span 2;
+        order: 1;
+    }
+    .portfolio .mediacolumninversed {
+        grid-column: span 2;
+        order: 0;
+    }
+    .portfolio .videowrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9*/ 
+        margin: 20px 20px 20px 0px;
+    }
+    .portfolio .entryvideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        border: none;
+        box-shadow: none;
+    }
+    .portfolio .entryscreenshot {
+        width: 100%;
+        margin: 20px 20px 20px 0px;
+        border-radius: 16px;
+    }
+
+    .portfolio .backtotop {
+        text-align: left;
+    }
+    .portfolio .backtotopinversed {
+        text-align: right;
+    }
+}
+
+/* content (portfolio overlay)*/
+.portfolio .overlay {
     position: fixed;
     display: none;
     width: 100%;
@@ -166,14 +293,13 @@ main .center .content .anchoricons img:hover {
     z-index: 2;
     cursor: pointer;
 }
-.overlay .overlaycontainer
-{
+.portfolio .overlaycontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.overlay .overlaycontainer .overlayscreenshot {
+.portfolio .overlayscreenshot {
     display: flex;
     outline-style: solid;
     outline-color:rgb(122, 122, 122);
@@ -182,173 +308,12 @@ main .center .content .anchoricons img:hover {
     max-height: 80%;
 }
 @media only screen and (max-width: 1000px) {
-    main .center .content .offsetanchor {
-        position:relative; 
-        top:-140px;
-    }
-    main .center .content .titleleft {
-        display: grid;
-        grid-template-columns: 64px fit-content(10px);
-        column-gap: 20px;
-        white-space: pre;
-    }
-    main .center .content .titleleft img {
-        width: 64px;
-    }
-    main .center .content .titleright {
-        display: grid;
-        grid-template-columns: 64px fit-content(10px);
-        column-gap: 20px;
-        white-space: pre;
-    }
-    main .center .content .titleright img {
-        width: 64px;
-    }
-    main .center .content .columnlayout {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    main .center .content .columnlayout .media img {
-        width: 100%;
-        margin: 20px 0px;
-        border-radius: 16px;
-    }
-    main .center .content .columnlayout .mediainversed img {
-        width: 100%;
-        margin: 20px 0px;
-        border-radius: 16px;
-    }
-    main .center .content .columnlayout .media .videowrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9*/ 
-        margin: 20px 0px
-    }
-    main .center .content .columnlayout .mediainversed .videowrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9*/ 
-        margin: 20px 0px
-    }
-    main .center .content .columnlayout .media .videowrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 16px;
-        border: none;
-        box-shadow: none;
-    }
-    main .center .content .columnlayout .mediainversed .videowrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 16px;
-        border: none;
-        box-shadow: none;
-    }
-    .overlay .overlaycontainer .overlayscreenshot {
+    .portfolio .overlayscreenshot {
         width: 80%
     }
 }
 @media only screen and (min-width: 1000px) {
-    main .center .content .offsetanchor {
-        position:relative; 
-        top:-80px;
-    }
-    main .center .content .rightaligned {
-        text-align: right;
-        margin-left: auto;
-        margin-right: 0;
-    }
-    main .center .content .titleleft {
-        display: grid;
-        grid-template-columns: 64px fit-content(10px);
-        column-gap: 20px;
-        white-space: pre;
-    }
-    main .center .content .titleleft img {
-        width: 64px;
-    }
-    main .center .content .titleright {
-        display: grid;
-        grid-template-columns: 64px fit-content(10px);
-        column-gap: 20px;
-        white-space: pre;
-        justify-content: end;
-    }
-    main .center .content .titleright img {
-        width: 64px;
-    }
-    main .center .content .columnlayout {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        column-gap: 50px;
-    }
-    main .center .content .columnlayout .text {
-        grid-column: span 3;
-        order: 0;
-    }
-    main .center .content .columnlayout .media {
-        grid-column: span 2;
-        order: 1;
-    }
-    main .center .content .columnlayout .textinversed {
-        grid-column: span 3;
-        order: 1;
-    }
-    main .center .content .columnlayout .mediainversed {
-        grid-column: span 2;
-        order: 0;
-    }
-    main .center .content .columnlayout .media img {
-        width: 100%;
-        margin: 20px 20px 20px 0px;
-        border-radius: 16px;
-    }
-    main .center .content .columnlayout .mediainversed img {
-        width: 100%;
-        margin: 20px 20px 20px 0px;
-        border-radius: 16px;
-    }
-    main .center .content .columnlayout .media .videowrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9*/ 
-        margin: 20px 20px 20px 0px;
-    }
-    main .center .content .columnlayout .mediainversed .videowrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9*/ 
-        margin: 20px 20px 20px 0px;
-    }
-    main .center .content .columnlayout .mediainversed .videowrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 16px;
-        border: none;
-        box-shadow: none;
-    }
-    main .center .content .columnlayout .media .videowrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 16px;
-        border: none;
-        box-shadow: none;
-    }
-    .overlay .overlaycontainer .overlayscreenshot {
+    .portfolio .overlayscreenshot {
         max-width: 70%
     }
 }

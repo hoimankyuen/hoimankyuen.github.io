@@ -115,7 +115,7 @@ function generateEntryBlock(entry, index)
     for (let i = 0; i < entry.videos.length; i++) 
     {
         const videoClone = videoTemplate.cloneNode(true);
-        videoClone.querySelector("iframe").setAttribute("src", entry.videos[i]);
+        videoClone.querySelector(".entryvideo").setAttribute("src", entry.videos[i]);
         videoTemplate.parentElement.appendChild(videoClone);
     }
     videoTemplate.hidden = true;
@@ -137,10 +137,10 @@ function generateEntryBlock(entry, index)
     // aligment
     if (index % 2 == 1)
     {
-        clone.querySelector(".titleleft").setAttribute("class", "titleright");
-        clone.querySelector(".leftaligned").setAttribute("class", "rightaligned");
-        clone.querySelector('.text').setAttribute("class", "textinversed");
-        clone.querySelector('.media').setAttribute("class", "mediainversed");
+        clone.querySelector(".title").setAttribute("class", "titleinversed");
+        clone.querySelector(".backtotop").setAttribute("class", "backtotopinversed");
+        clone.querySelector('.textcolumn').setAttribute("class", "textcolumninversed");
+        clone.querySelector('.mediacolumn').setAttribute("class", "mediacolumninversed");
     }
 }
 
