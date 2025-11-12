@@ -121,13 +121,13 @@ function generateEntryBlock(entry, index)
     videoTemplate.hidden = true;
 
     // screenshots
-    const screenshotTemplate = clone.querySelector(".entryscreenshot");
+    const screenshotTemplate = clone.querySelector(".screenshotwrapper");
     for (let i = 0; i < entry.screenshots.length; i++) 
     {
         const screenshotClone = screenshotTemplate.cloneNode(true);
-        screenshotClone.setAttribute("src", entry.screenshots[i]);
-        screenshotClone.setAttribute("alt", entry.name + " Screenshot " + (i + 1));
-        screenshotClone.addEventListener("click", function() {
+        screenshotClone.querySelector(".entryscreenshot").setAttribute("src", entry.screenshots[i]);
+        screenshotClone.querySelector(".entryscreenshot").setAttribute("alt", entry.name + " Screenshot " + (i + 1));
+        screenshotClone.querySelector(".entryscreenshot").addEventListener("click", function() {
             showOverlay(entry.screenshots[i]);
         });
         screenshotTemplate.parentElement.appendChild(screenshotClone);

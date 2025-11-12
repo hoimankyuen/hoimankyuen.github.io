@@ -182,11 +182,16 @@ main .center .content .verticalcenterblock {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     }
+    .portfolio .medias {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 20px;
+    }
     .portfolio .videowrapper {
         position: relative;
         width: 100%;
         padding-bottom: 56.25%; /* 16:9*/ 
-        margin: 20px 0px
     }
     .portfolio .entryvideo {
         position: absolute;
@@ -198,12 +203,14 @@ main .center .content .verticalcenterblock {
         border: none;
         box-shadow: none;
     }
+    .portfolio .videowrapper {
+        position: relative;
+        width: 100%;
+    }
     .portfolio .entryscreenshot {
         width: 100%;
-        margin: 20px 0px;
         border-radius: 16px;
     }
-
 }
 @media only screen and (min-width: 1000px) {
     .portfolio .offsetanchor {
@@ -249,12 +256,17 @@ main .center .content .verticalcenterblock {
         grid-column: span 2;
         order: 0;
     }
+    .portfolio .medias {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 20px;
+    }
     .portfolio .videowrapper {
         position: relative;
         width: 100%;
         padding-bottom: 56.25%; /* 16:9*/ 
-        margin: 20px 20px 20px 0px;
-    }
+        }
     .portfolio .entryvideo {
         position: absolute;
         top: 0;
@@ -265,9 +277,12 @@ main .center .content .verticalcenterblock {
         border: none;
         box-shadow: none;
     }
+    .portfolio .screenshotwrapper {
+        position: relative;
+        width: 100%;
+    }
     .portfolio .entryscreenshot {
         width: 100%;
-        margin: 20px 20px 20px 0px;
         border-radius: 16px;
     }
 
