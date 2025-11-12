@@ -128,6 +128,9 @@ function generateEntryBlock(entry, index)
         const screenshotClone = screenshotTemplate.cloneNode(true);
         screenshotClone.setAttribute("src", entry.screenshots[i]);
         screenshotClone.setAttribute("alt", entry.name + " Screenshot " + (i + 1));
+        screenshotClone.addEventListener("click", function() {
+            showOverlay(entry.screenshots[i]);
+        });
         screenshotTemplate.parentElement.appendChild(screenshotClone);
     }
     screenshotTemplate.hidden = true;
@@ -143,10 +146,25 @@ function generateEntryBlock(entry, index)
 
 export function generateEntries(entryList)
 {
+    // generate entries
     for (let i = 0; i < entryList.length; i++) 
     {
         let entry = entryList[i];
         generateEntryAnchorIcons(entry);
         generateEntryBlock(entry, i);
     }
+
+    // add listeners
+    document.querySelector(".overlay").addEventListener("click", hideOverlay);
+}
+
+export function showOverlay(screenshotPath)
+{
+    document.querySelector(".overlay").style.display = "block";
+    document.querySelector(".overlayscreenshot").setAttribute("src", screenshotPath);
+}
+
+export function hideOverlay()
+{
+    document.querySelector(".overlay").style.display = "none";
 }

@@ -81,16 +81,19 @@
                     </div>
                 </div>
             </div>
-
-            <script type="module">
-                import {data} from './js/data.js';
-                import {generateEntries} from './js/portfolio.js';
-                generateEntries(data);
-            </script>
-
+            <div class="overlay">
+                <div class="overlaycontainer">
+                    <img class="overlayscreenshot" src="/data/smoc/screenshot1.png" alt="Template Screenshot">
+                </div>
+            </div>
             <div class="bottom">
                 © 2025 by Hoi Man Yuen. All Rights Reserved.
             </div>
         </main>
     </body>
+    <script type="module">
+        import {data} from './js/data.js';
+        import {generateEntries} from './js/portfolio.js';
+        generateEntries(data);
+    </script>
 </html>
