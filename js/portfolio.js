@@ -116,6 +116,9 @@ function generateEntryBlock(entry, index)
     {
         const videoClone = videoTemplate.cloneNode(true);
         videoClone.querySelector(".entryvideo").setAttribute("src", entry.videos[i]);
+        videoClone.querySelector(".videoblocker").addEventListener("click", function() {
+            showOverlayVideo(entry.videos[i]);
+        });
         videoTemplate.parentElement.appendChild(videoClone);
     }
     videoTemplate.hidden = true;
@@ -128,7 +131,7 @@ function generateEntryBlock(entry, index)
         screenshotClone.querySelector(".entryscreenshot").setAttribute("src", entry.screenshots[i]);
         screenshotClone.querySelector(".entryscreenshot").setAttribute("alt", entry.name + " Screenshot " + (i + 1));
         screenshotClone.querySelector(".entryscreenshot").addEventListener("click", function() {
-            showOverlay(entry.screenshots[i]);
+            showOverlayScreenshot(entry.screenshots[i]);
         });
         screenshotTemplate.parentElement.appendChild(screenshotClone);
     }
@@ -158,13 +161,29 @@ export function generateEntries(entryList)
     document.querySelector(".overlay").addEventListener("click", hideOverlay);
 }
 
-export function showOverlay(screenshotPath)
+export function showOverlayVideo(videoPath)
 {
     document.querySelector(".overlay").style.display = "block";
+    document.querySelector(".overlayvideo").style.display = "block";
+    document.querySelector(".overlayvideo").setAttribute("src", videoPath);
+    document.querySelector(".overlayscreenshot").style.display = "none";
+    document.querySelector(".overlayscreenshot").setAttribute("src", "");
+}
+
+export function showOverlayScreenshot(screenshotPath)
+{
+    document.querySelector(".overlay").style.display = "block";
+    document.querySelector(".overlayvideo").style.display = "none";
+    document.querySelector(".overlayvideo").setAttribute("src", "");
+    document.querySelector(".overlayscreenshot").style.display = "block";
     document.querySelector(".overlayscreenshot").setAttribute("src", screenshotPath);
 }
 
 export function hideOverlay()
 {
     document.querySelector(".overlay").style.display = "none";
+    document.querySelector(".overlayvideo").style.display = "none";
+    document.querySelector(".overlayvideo").setAttribute("src", "");
+    document.querySelector(".overlayscreenshot").style.display = "none";
+    document.querySelector(".overlayscreenshot").setAttribute("src", "");
 }
