@@ -135,7 +135,7 @@ main .center .content .centerizedtext {
     padding: 0px 15% 0px 15%;
 }
 main .center .content .anchoricons {
-    margin: 20px 15% 20px 15%;
+    margin: 20px 0px 20px 0px;
 
     display: flex;
     flex-wrap: wrap;
@@ -144,7 +144,7 @@ main .center .content .anchoricons {
     gap: 20px 20px;
 }
 main .center .content .anchoricons img {
-    width: 60px;
+    width: 50px;
     padding-top: 20px;
     padding-bottom: 0px;
     transition: padding 0.1s;
@@ -181,12 +181,7 @@ main .center .content .anchoricons img:hover {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     }
-    main .center .content .columnlayout .text {
-        grid-row: 2;
-    }
-    main .center .content .columnlayout .media {
-        grid-row: 1;
-    }
+
     main .center .content .columnlayout .media img {
         width: 100%;
         margin: 20px 0px;
@@ -242,6 +237,12 @@ main .center .content .anchoricons img:hover {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         column-gap: 50px;
+    }
+    main .center .content .columnlayout .text {
+        grid-column: span 3;
+    }
+    main .center .content .columnlayout .media {
+        grid-column: span 2;
     }
     main .center .content .columnlayout .media img {
         width: 100%;
