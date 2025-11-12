@@ -215,13 +215,34 @@ main .center .content .anchoricons img:hover {
         margin: 20px 0px;
         border-radius: 16px;
     }
+    main .center .content .columnlayout .mediainversed img {
+        width: 100%;
+        margin: 20px 0px;
+        border-radius: 16px;
+    }
     main .center .content .columnlayout .media .videowrapper {
         position: relative;
         width: 100%;
         padding-bottom: 56.25%; /* 16:9*/ 
         margin: 20px 0px
     }
+    main .center .content .columnlayout .mediainversed .videowrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9*/ 
+        margin: 20px 0px
+    }
     main .center .content .columnlayout .media .videowrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        border: none;
+        box-shadow: none;
+    }
+    main .center .content .columnlayout .mediainversed .videowrapper iframe {
         position: absolute;
         top: 0;
         left: 0;
@@ -271,11 +292,26 @@ main .center .content .anchoricons img:hover {
     }
     main .center .content .columnlayout .text {
         grid-column: span 3;
+        order: 0;
     }
     main .center .content .columnlayout .media {
         grid-column: span 2;
+        order: 1;
+    }
+    main .center .content .columnlayout .textinversed {
+        grid-column: span 3;
+        order: 1;
+    }
+    main .center .content .columnlayout .mediainversed {
+        grid-column: span 2;
+        order: 0;
     }
     main .center .content .columnlayout .media img {
+        width: 100%;
+        margin: 20px 20px 20px 0px;
+        border-radius: 16px;
+    }
+    main .center .content .columnlayout .mediainversed img {
         width: 100%;
         margin: 20px 20px 20px 0px;
         border-radius: 16px;
@@ -285,6 +321,22 @@ main .center .content .anchoricons img:hover {
         width: 100%;
         padding-bottom: 56.25%; /* 16:9*/ 
         margin: 20px 20px 20px 0px;
+    }
+    main .center .content .columnlayout .mediainversed .videowrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9*/ 
+        margin: 20px 20px 20px 0px;
+    }
+    main .center .content .columnlayout .mediainversed .videowrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        border: none;
+        box-shadow: none;
     }
     main .center .content .columnlayout .media .videowrapper iframe {
         position: absolute;

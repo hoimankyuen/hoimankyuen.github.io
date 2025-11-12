@@ -59,7 +59,6 @@ function generateEntryBlock(entry, index)
 
     // title
     clone.querySelector(".offsetanchor").setAttribute("id", entry.id);
-    clone.querySelector(".titleleft").setAttribute("class", index % 2 == 0 ? "titleleft" : "titleright");
     clone.querySelector(".entryicon").setAttribute("src", entry.icon);
     clone.querySelector(".entrytitle").textContent = entry.name;
     
@@ -138,9 +137,10 @@ function generateEntryBlock(entry, index)
     // aligment
     if (index % 2 == 1)
     {
+        clone.querySelector(".titleleft").setAttribute("class", "titleright");
         clone.querySelector(".leftaligned").setAttribute("class", "rightaligned");
-        clone.querySelector('.text').style.order = 2;
-        clone.querySelector('.media').style.order = 1;
+        clone.querySelector('.text').setAttribute("class", "textinversed");
+        clone.querySelector('.media').setAttribute("class", "mediainversed");
     }
 }
 
