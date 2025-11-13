@@ -143,6 +143,26 @@ main .center .content .verticalcenterblock {
 .portfolio .centerizedtext {
     padding: 0px 15% 0px 15%;
 }
+.portfolio .grouping {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.portfolio .grouping a {
+    color: var(--text-color);
+    display: block;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.5s;
+    border-radius: 8px;
+}
+.portfolio .grouping a:hover {
+    background-color: #808080;
+}
+.portfolio .grouping a.active {
+    background-color: #006080;
+}
 .portfolio .anchornavbar {
     position: sticky;
     background-color: #202020;
@@ -171,7 +191,7 @@ main .center .content .verticalcenterblock {
 @media only screen and (max-width: 1000px) {
     .portfolio .offsetanchor {
         position:relative; 
-        top:-140px;
+        top:calc(0px - 196px - 10px);
     }
 
     .portfolio .title {
@@ -237,7 +257,7 @@ main .center .content .verticalcenterblock {
 @media only screen and (min-width: 1000px) {
     .portfolio .offsetanchor {
         position:relative; 
-        top:-80px;
+        top:calc(0px - 196px - 10px);
     }
 
     .portfolio .title {
@@ -319,13 +339,6 @@ main .center .content .verticalcenterblock {
         width: 100%;
         border-radius: 16px;
         cursor: pointer;
-    }
-
-    .portfolio .backtotop {
-        text-align: left;
-    }
-    .portfolio .backtotopinversed {
-        text-align: right;
     }
 }
 

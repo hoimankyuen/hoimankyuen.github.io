@@ -1,3 +1,26 @@
+function highlightGroup(group)
+{
+    let groupId = group == null ? "groupall" : "group" + group;
+    document.getElementById(groupId).setAttribute("class", "active");
+}
+
+function selectGroup(group)
+{
+    switch (group)
+    {
+        case "jam":
+            return data.allJamData;
+        case "job":
+            return data.allJobData;
+        case "school":
+            return data.allSchoolData;
+        case "prototype":
+            return data.allPrototypeData;
+        default:
+            return data.allData;
+    }
+}
+
 function generateEntryAnchorIcons(entry)
 {
     const main = document.querySelector("div .anchoricons");
@@ -26,7 +49,6 @@ function generateEntryBlock(entry, index)
     clone.querySelector(".entryicon").setAttribute("src", entry.icon);
     clone.querySelector(".entrytitle").textContent = entry.name;
     
-
     // descriptions
     const descriptionTemplate = clone.querySelector(".entrydescription");
     for (let i = 0; i < entry.descriptions.length; i++) 
@@ -105,7 +127,6 @@ function generateEntryBlock(entry, index)
     if (index % 2 == 1)
     {
         clone.querySelector(".title").setAttribute("class", "titleinversed");
-        clone.querySelector(".backtotop").setAttribute("class", "backtotopinversed");
         clone.querySelector('.textcolumn').setAttribute("class", "textcolumninversed");
         clone.querySelector('.mediacolumn').setAttribute("class", "mediacolumninversed");
     }
@@ -131,26 +152,6 @@ export function generateEntriesFromURL(search)
 {
     let param = new URLSearchParams(search);
 
-    let targetData = [];
-    switch (param.get("type"))
-    {
-        case "jam":
-            targetData = data.allJamData;
-            break;
-        case "job":
-            targetData = data.allJobData;
-            break;
-        case "school":
-            targetData = data.allSchoolData;
-            break;
-        case "prototype":
-            targetData = data.allPrototypeData;
-            break;
-        default:
-            targetData = data.allData;
-            break;
-    }
-
     /*
     let page = 0;
     let entriesPerPage = 100;
@@ -164,7 +165,8 @@ export function generateEntriesFromURL(search)
     }
     targetData = targetData.slice(page * entriesPerPage, (page + 1) * entriesPerPage);
     */
-   
+    highlightGroup(param.get("type"));
+    let targetData = selectGroup(param.get("type"));
     generateEntries(targetData);
 }
 
