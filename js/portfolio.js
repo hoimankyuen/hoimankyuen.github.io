@@ -1,39 +1,3 @@
-const clubGrenadeData = 
-{
-    id: "clubgrenade",
-    name: "Club Grenade",
-    icon: "images/clubgrenade/icon.png",
-    descriptions: [
-        "Club Grenade is a fast-paced multiplayer lite action game about defeating enemies with grenades and throwables only. The players must cooperate and fight through waves of enemies through the level, or be defeated by the enemy when within chaotic friendly fire. The game was inspired by Overcooked and its chaotic yet fun gameplay.",
-        "The game was a school project developed using Unity by a small team of 3 people that I led. The project was the winner of the Best Project Award and the Dean's Fund Award among all other projects from the engineering department."
-    ],
-    links: [
-        {
-            linktype: "webpage",
-            link: "https://innoacademy.engg.hku.hk/club-grenade/"
-        }
-    ],
-    accomplishments: [
-        "Directed and led the whole project, guided and mentored members with zero experence throughout the whole development process.",
-        "Created various shader including cel-shading toon shader and force field shader.",
-        "Designed and createe most 2D and 3D assets using Photoshop and Blender.",
-        "Designed structure and events of the entire level.",
-        "Implemented input mode auto detection system to faciliate quick multiplayer joining."
-    ],
-    videos: [
-        "https://www.youtube.com/embed/sYWnUHE6DBE"
-    ],
-    screenshots: [
-        "images/clubgrenade/screenshot1.jpg",
-        "images/clubgrenade/screenshot2.jpg"
-    ]
-};
-
-const dataTest = [
-    clubGrenadeData,
-    clubGrenadeData
-];
-
 function generateEntryAnchorIcons(entry)
 {
     const main = document.querySelector("div .anchoricons");
@@ -147,7 +111,7 @@ function generateEntryBlock(entry, index)
     }
 }
 
-export function generateEntries(entryList)
+function generateEntries(entryList)
 {
     // generate entries
     for (let i = 0; i < entryList.length; i++) 
@@ -159,6 +123,49 @@ export function generateEntries(entryList)
 
     // add listeners
     document.querySelector(".overlay").addEventListener("click", hideOverlay);
+}
+
+import * as data from "/js/data.js";
+
+export function generateEntriesFromURL(search)
+{
+    let param = new URLSearchParams(search);
+
+    let targetData = [];
+    switch (param.get("type"))
+    {
+        case "jam":
+            targetData = data.allJamData;
+            break;
+        case "job":
+            targetData = data.allJobData;
+            break;
+        case "school":
+            targetData = data.allSchoolData;
+            break;
+        case "prototype":
+            targetData = data.allPrototypeData;
+            break;
+        default:
+            targetData = data.allData;
+            break;
+    }
+
+    /*
+    let page = 0;
+    let entriesPerPage = 100;
+    if (param.has("page"))
+    {
+        page = parseInt(param.get("page"));
+        if (isNaN(page))
+        {
+            page = 0;
+        }
+    }
+    targetData = targetData.slice(page * entriesPerPage, (page + 1) * entriesPerPage);
+    */
+   
+    generateEntries(targetData);
 }
 
 export function showOverlayVideo(videoPath)

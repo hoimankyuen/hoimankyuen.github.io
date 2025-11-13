@@ -37,9 +37,7 @@ nav {
 nav .name {   
     display: block;
     float: left;
-    margin: 5px 5px;
-    padding: 5px 20px;
-
+    padding: 0px 20px;
     font-family: Georgia, sans-serif;
     font-weight: bold;
     font-size: 36px;
@@ -48,8 +46,7 @@ nav .links a {
     color: var(--text-color);
     display: block;
     float: right;
-    height: 50%;
-    margin: 10px 5px 10px 5px;
+    margin: 0px 5px 5px 5px;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -66,18 +63,18 @@ nav .links a.active {
 /* body backgrounds */
 @media only screen and (max-width: 1000px) {
     body {
-        margin: 130px 0px 0px 0px;
+        margin: 103px 0px 0px 0px;
     }
     main {
-        min-height: calc(100vh - 130px);
+        min-height: calc(100vh - 103px);
     }
 }
 @media only screen and (min-width: 1000px) {
     body {
-        margin: 70px 0px 0px 0px;
+        margin: 54px 0px 0px 0px;
     }
     main {
-        min-height: calc(100vh - 70px);
+        min-height: calc(100vh - 54px);
     }
 }
 main {
@@ -110,12 +107,12 @@ main .center .content {
 }
 @media only screen and (max-width: 1000px) {
     main .center .content {    
-        height: calc(100vh - 130px - 40px);
+        height: calc(100vh - 103px - 34px);
     }
 }
 @media only screen and (min-width: 1000px) {
         main .center .content {    
-        height: calc(100vh - 70px - 40px);
+        height: calc(100vh - 54px - 34px);
     }
 }
 main .center .content h1, h2 {
@@ -157,7 +154,7 @@ main .center .content .verticalcenterblock {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px 20px;
+    gap: 0px 20px;
 }
 .portfolio .anchorIcon {
     width: 50px;
@@ -167,7 +164,7 @@ main .center .content .verticalcenterblock {
 }
 .portfolio .anchorIcon:hover {
     padding-top: 0px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 /* content (portfolio entries)*/
@@ -418,7 +415,6 @@ main .bottom {
     width: 100%;
     padding: 5px 0px 5px 0px;
     text-align: center;
-    height: 30px;
 }
 
 

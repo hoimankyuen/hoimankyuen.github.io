@@ -99,8 +99,7 @@
         </main>
     </body>
     <script type="module">
-        import {data} from './js/data.js';
-        import {generateEntries} from './js/portfolio.js';
-        generateEntries(data);
+        import {generateEntriesFromURL} from './js/portfolio.js';
+        generateEntriesFromURL(document.location.search);
     </script>
 </html>

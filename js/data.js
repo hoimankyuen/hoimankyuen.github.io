@@ -17,19 +17,19 @@ import {data as fairyEdibleData} from "/data/fairyedible/data.js";
 import {data as smocData} from "/data/smoc/data.js";
 import {data as alkimiaShadowingData} from "/data/alkimiashadowing/data.js";
 
-import {data as clubGrenadeData} from "/data/clubgrenade/data.js";
-import {data as rebuildingData} from "/data/rebuilding/data.js";
-import {data as accelerandoData} from "/data/accelerando/data.js";
-
 import {data as xploroData} from "/data/xploro/data.js";
 import {data as navalFrontlineData} from "/data/navalfrontline/data.js";
 import {data as shotNViralData} from "/data/shotnviral/data.js";
 import {data as chromomatchData} from "/data/chromomatch/data.js";
 
+import {data as clubGrenadeData} from "/data/clubgrenade/data.js";
+import {data as rebuildingData} from "/data/rebuilding/data.js";
+import {data as accelerandoData} from "/data/accelerando/data.js";
+
 import {data as dicingHerosData} from "/data/dicingheros/data.js";
 import {data as planeTacticsData} from "/data/planetactics/data.js";
 
-export let data = [
+export let allData = [
     remoteStrandingData,
     clubGrenadeData,
     alkimiaShadowingData,
@@ -44,4 +44,30 @@ export let data = [
     chromomatchData,
     planeTacticsData,
     dicingHerosData
+];
+
+export let allJamData = [
+    remoteStrandingData,
+    budgetShopData,
+    fairyEdibleData,
+    smocData,
+    alkimiaShadowingData
+];
+
+export let allJobData = [
+    xploroData,
+    navalFrontlineData,
+    shotNViralData,
+    chromomatchData
+];
+
+export let allSchoolData = [
+    clubGrenadeData,
+    rebuildingData,
+    accelerandoData
+];
+
+export let allPrototypeData = [
+    dicingHerosData,
+    planeTacticsData
 ];
