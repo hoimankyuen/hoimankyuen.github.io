@@ -3,6 +3,7 @@ body {
     width: 100%;
     margin: 0px;
     padding: 0px;
+    background-color: #000000;
     font-family: Tahoma, Helvetica, sans-serif;
     letter-spacing: 0.1em;
     line-height: 1.5;
@@ -19,7 +20,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
 
     display: grid;
     align-items: end;
@@ -345,7 +346,7 @@ main .center .content a {
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.75);
-    z-index: 3;
+    z-index: 4;
     cursor: pointer;
 }
 .portfoliopage .overlaycontainer {
