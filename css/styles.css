@@ -124,19 +124,11 @@ main .center .content a {
 }
 
 /* content (index)*/
-main .center .content .banner {
+.indexpage .banner {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
-}
-main .center .content .verticalcenterblock {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
 
 /* content (portfolio top)*/
@@ -410,19 +402,19 @@ main .center .content .verticalcenterblock {
 
 
 /* content (contact) */
-main .center .content table {
+.contactpage table {
     margin-left: auto;
     margin-right: auto;
 }
-main .center .content table td {
+.contactpage table td {
     height: 36px;
     padding: 5px 5px 5px 5px;
 }
-main .center .content table .heightalign {
+.contactpage table .heightalign {
     height:24px;
     width: auto;
 }
-main .center .content table .widthalign {
+.contactpage table .widthalign {
     width:24px;
 }
 
