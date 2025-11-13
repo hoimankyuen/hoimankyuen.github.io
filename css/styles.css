@@ -140,14 +140,14 @@ main .center .content .verticalcenterblock {
 }
 
 /* content (portfolio top)*/
-.portfolio .centerizedtext {
+.portfoliopage .centerizedtext {
     padding: 0px 15% 0px 15%;
 }
-.portfolio .grouping {
+.portfoliopage .grouping {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
 }
-.portfolio .grouping a {
+.portfoliopage .grouping a {
     color: var(--text-color);
     display: block;
     margin: 5px 5px 5px 5px;
@@ -157,76 +157,76 @@ main .center .content .verticalcenterblock {
     transition: background-color 0.5s;
     border-radius: 8px;
 }
-.portfolio .grouping a:hover {
+.portfoliopage .grouping a:hover {
     background-color: #808080;
 }
-.portfolio .grouping a.active {
+.portfoliopage .grouping a.active {
     background-color: #006080;
 }
-.portfolio .anchornavbar {
+.portfoliopage .anchornavbar {
     position: sticky;
     background-color: #202020;
     top: 0px;
     z-index: 2;
 }
-.portfolio .anchoricons {
+.portfoliopage .anchoricons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 0px 20px;
 }
-.portfolio .anchorIcon {
+.portfoliopage .anchorIcon {
     width: 50px;
     padding-top: 15px;
     padding-bottom: 0px;
     transition: padding 0.1s;
 }
-.portfolio .anchorIcon:hover {
+.portfoliopage .anchorIcon:hover {
     padding-top: 0px;
     padding-bottom: 10px;
 }
 
 /* content (portfolio entries)*/
 @media only screen and (max-width: 1000px) {
-    .portfolio .offsetanchor {
+    .portfoliopage .offsetanchor {
         position:relative; 
         top:calc(0px - 196px - 10px);
     }
 
-    .portfolio .title {
+    .portfoliopage .title {
         display: grid;
         grid-template-columns: 64px fit-content(10px);
         column-gap: 20px;
         white-space: pre;
     }
-    .portfolio .titleinversed {
+    .portfoliopage .titleinversed {
         display: grid;
         grid-template-columns: 64px fit-content(10px);
         column-gap: 20px;
         white-space: pre;
     }
-    .portfolio .entryicon {
+    .portfoliopage .entryicon {
         width: 64px;
     }
 
-    .portfolio .columnlayout {
+    .portfoliopage .columnlayout {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     }
-    .portfolio .medias {
+    .portfoliopage .medias {
         display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
         grid-gap: 20px;
     }
-    .portfolio .videowrapper {
+    .portfoliopage .videowrapper {
         position: relative;
         width: 100%;
         padding-bottom: 56.25%; /* 16:9*/ 
     }
-    .portfolio .entryvideo {
+    .portfoliopage .entryvideo {
         position: absolute;
         top: 0;
         left: 0;
@@ -236,7 +236,7 @@ main .center .content .verticalcenterblock {
         border: none;
         box-shadow: none;
     }
-    .portfolio .videoblocker {
+    .portfoliopage .videoblocker {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -248,68 +248,68 @@ main .center .content .verticalcenterblock {
         z-index: 1;
         cursor: pointer;
     }
-    .portfolio .entryscreenshot {
+    .portfoliopage .entryscreenshot {
         width: 100%;
         border-radius: 16px;
         cursor: pointer;
     }
 }
 @media only screen and (min-width: 1000px) {
-    .portfolio .offsetanchor {
+    .portfoliopage .offsetanchor {
         position:relative; 
         top:calc(0px - 196px - 10px);
     }
 
-    .portfolio .title {
+    .portfoliopage .title {
         display: grid;
         grid-template-columns: 64px fit-content(10px);
         column-gap: 20px;
         white-space: pre;
     }
-    .portfolio .titleinversed {
+    .portfoliopage .titleinversed {
         display: grid;
         grid-template-columns: 64px fit-content(10px);
         column-gap: 20px;
         white-space: pre;
         justify-content: end;
     }
-    .portfolio .entryicon {
+    .portfoliopage .entryicon {
         width: 64px;
     }
 
-    .portfolio .columnlayout {
+    .portfoliopage .columnlayout {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         column-gap: 50px;
     }
-    .portfolio .textcolumn {
+    .portfoliopage .textcolumn {
         grid-column: span 3;
         order: 0;
     }
-    .portfolio .textcolumninversed {
+    .portfoliopage .textcolumninversed {
         grid-column: span 3;
         order: 1;
     }
-    .portfolio .mediacolumn {
+    .portfoliopage .mediacolumn {
         grid-column: span 2;
         order: 1;
     }
-    .portfolio .mediacolumninversed {
+    .portfoliopage .mediacolumninversed {
         grid-column: span 2;
         order: 0;
     }
-    .portfolio .medias {
+    .portfoliopage .medias {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
         grid-gap: 20px;
     }
-    .portfolio .videowrapper {
+    .portfoliopage .videowrapper {
         position: relative;
         width: 100%;
         padding-bottom: 56.25%; /* 16:9*/ 
     }
-    .portfolio .entryvideo {
+    .portfoliopage .entryvideo {
         position: absolute;
         top: 0;
         left: 0;
@@ -319,7 +319,7 @@ main .center .content .verticalcenterblock {
         border: none;
         box-shadow: none;
     }
-    .portfolio .videoblocker {
+    .portfoliopage .videoblocker {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -331,11 +331,11 @@ main .center .content .verticalcenterblock {
         z-index: 1;
         cursor: pointer;
     }
-    .portfolio .screenshotwrapper {
+    .portfoliopage .screenshotwrapper {
         position: relative;
         width: 100%;
     }
-    .portfolio .entryscreenshot {
+    .portfoliopage .entryscreenshot {
         width: 100%;
         border-radius: 16px;
         cursor: pointer;
@@ -343,7 +343,7 @@ main .center .content .verticalcenterblock {
 }
 
 /* content (portfolio overlay)*/
-.portfolio .overlay {
+.portfoliopage .overlay {
     position: fixed;
     display: none;
     width: 100%;
@@ -356,13 +356,13 @@ main .center .content .verticalcenterblock {
     z-index: 3;
     cursor: pointer;
 }
-.portfolio .overlaycontainer {
+.portfoliopage .overlaycontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.portfolio .overlayvideo {
+.portfoliopage .overlayvideo {
     display: none;
     outline-style: solid;
     outline-color:rgb(122, 122, 122);
@@ -370,7 +370,7 @@ main .center .content .verticalcenterblock {
     border-radius: 16px;
     height: 80%;
 }
-.portfolio .overlayscreenshot {
+.portfoliopage .overlayscreenshot {
     display: none;
     outline-style: solid;
     outline-color:rgb(122, 122, 122);
@@ -379,18 +379,18 @@ main .center .content .verticalcenterblock {
     max-height: 80%;
 }
 @media only screen and (max-width: 1000px) {
-    .portfolio .overlayvideo {
+    .portfoliopage .overlayvideo {
         width: 80%;
     }
-    .portfolio .overlayscreenshot {
+    .portfoliopage .overlayscreenshot {
         max-width: 80%;
     }
 }
 @media only screen and (min-width: 1000px) {
-    .portfolio .overlayvideo {
+    .portfoliopage .overlayvideo {
         width: 70%;
     }
-    .portfolio .overlayscreenshot {
+    .portfoliopage .overlayscreenshot {
         max-width: 70%;
     }
 }
