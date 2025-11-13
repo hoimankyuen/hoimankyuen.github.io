@@ -396,12 +396,18 @@ main .center .content .verticalcenterblock {
 }
 
 /* content (about) */
-main .center .content .photo {
+.aboutpage .photo {
     float: left; 
     margin: 30px; 
     border-radius: 16px;
     width: 30%;
 }
+.aboutpage .columnlayout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        column-gap: 50px;
+    }
+
 
 /* content (contact) */
 main .center .content table {
