@@ -18,6 +18,7 @@ import {data as smocData} from "/data/smoc/data.js";
 import {data as alkimiaShadowingData} from "/data/alkimiashadowing/data.js";
 
 import {data as xploroData} from "/data/xploro/data.js";
+import {data as xrccData} from "/data/xrcc/data.js";
 import {data as navalFrontlineData} from "/data/navalfrontline/data.js";
 import {data as shotNViralData} from "/data/shotnviral/data.js";
 import {data as chromomatchData} from "/data/chromomatch/data.js";
@@ -37,6 +38,7 @@ export let allData = [
     budgetShopData,
     smocData,
     fairyEdibleData,
+    xrccData,
     navalFrontlineData,
     accelerandoData,
     rebuildingData,
@@ -56,6 +58,7 @@ export let allJamData = [
 
 export let allWorkData = [
     xploroData,
+    xrccData,
     navalFrontlineData,
     shotNViralData,
     chromomatchData
