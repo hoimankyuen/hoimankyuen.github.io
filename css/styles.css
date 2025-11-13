@@ -202,6 +202,9 @@ main .center .content a {
     .portfoliopage .entryicon {
         width: 64px;
     }
+    .portfoliopage .entryiconinversed {
+        width: 64px;
+    }
 
     .portfoliopage .columnlayout {
         display: grid;
@@ -261,13 +264,25 @@ main .center .content a {
     }
     .portfoliopage .titleinversed {
         display: grid;
-        grid-template-columns: 64px fit-content(10px);
+        grid-template-columns: fit-content(10px) 64px;
         column-gap: 20px;
         white-space: pre;
         justify-content: end;
     }
     .portfoliopage .entryicon {
         width: 64px;
+        order: 0;
+    }
+    .portfoliopage .entryiconinversed {
+        width: 64px;
+        
+        order: 1;
+    }
+    .portfoliopage .entrytitle {
+        order: 1;
+    }
+    .portfoliopage .entrytitleinversed {
+        order: 0;
     }
 
     .portfoliopage .columnlayout {

@@ -127,6 +127,8 @@ function generateEntryBlock(entry, index)
     if (index % 2 == 1)
     {
         clone.querySelector(".title").setAttribute("class", "titleinversed");
+        clone.querySelector(".entryicon").setAttribute("class", "entryiconinversed");
+        clone.querySelector(".entrytitle").setAttribute("class", "entrytitleinversed");
         clone.querySelector('.textcolumn').setAttribute("class", "textcolumninversed");
         clone.querySelector('.mediacolumn').setAttribute("class", "mediacolumninversed");
     }
