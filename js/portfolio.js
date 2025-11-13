@@ -10,8 +10,8 @@ function selectGroup(group)
     {
         case "jam":
             return data.allJamData;
-        case "job":
-            return data.allJobData;
+        case "work":
+            return data.allWorkData;
         case "school":
             return data.allSchoolData;
         case "prototype":

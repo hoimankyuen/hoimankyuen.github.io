@@ -54,7 +54,7 @@ export let allJamData = [
     alkimiaShadowingData
 ];
 
-export let allJobData = [
+export let allWorkData = [
     xploroData,
     navalFrontlineData,
     shotNViralData,
