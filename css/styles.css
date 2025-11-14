@@ -43,6 +43,9 @@ nav .name {
     font-weight: bold;
     font-size: 36px;
 }
+nav .links {
+    padding: 0px 20px;
+}
 nav .links a {
     color: var(--text-color);
     display: block;
