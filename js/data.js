@@ -30,30 +30,23 @@ import {data as accelerandoData} from "/data/accelerando/data.js";
 import {data as dicingHerosData} from "/data/dicingheros/data.js";
 import {data as planeTacticsData} from "/data/planetactics/data.js";
 
-export let allData = [
+export let featuredData = [
     remoteStrandingData,
     clubGrenadeData,
-    alkimiaShadowingData,
     xploroData,
-    budgetShopData,
-    smocData,
-    fairyEdibleData,
-    xrccData,
+    alkimiaShadowingData,
     navalFrontlineData,
-    accelerandoData,
-    rebuildingData,
-    shotNViralData,
-    chromomatchData,
-    planeTacticsData,
-    dicingHerosData
+    smocData,
+    xrccData,
+    rebuildingData
 ];
 
 export let allJamData = [
     remoteStrandingData,
-    budgetShopData,
-    fairyEdibleData,
+    alkimiaShadowingData,
     smocData,
-    alkimiaShadowingData
+    budgetShopData,
+    fairyEdibleData
 ];
 
 export let allWorkData = [
@@ -71,6 +64,6 @@ export let allSchoolData = [
 ];
 
 export let allPrototypeData = [
-    dicingHerosData,
-    planeTacticsData
+    planeTacticsData,
+    dicingHerosData
 ];

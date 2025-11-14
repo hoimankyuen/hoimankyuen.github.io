@@ -1,6 +1,6 @@
 function highlightGroup(group)
 {
-    let groupId = group == null ? "groupall" : "group" + group;
+    let groupId = group == null ? "groupfeatured" : "group" + group;
     document.getElementById(groupId).setAttribute("class", "active");
 }
 
@@ -17,7 +17,7 @@ function selectGroup(group)
         case "prototype":
             return data.allPrototypeData;
         default:
-            return data.allData;
+            return data.featuredData;
     }
 }
 
