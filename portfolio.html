@@ -33,11 +33,11 @@
                         <hr>
                         <div class="anchornavbar">  
                             <div class="grouping">
-                            <a id="groupfeatured" href="portfolio.html">Featured</a>
-                            <a id="groupwork" href="portfolio.html?type=work">Work</a>
-                            <a id="groupjam" href="portfolio.html?type=jam">Jams</a>
-                            <a id="groupschool" href="portfolio.html?type=school">School</a>
-                            <a id="groupprototype" href="portfolio.html?type=prototype">Prototypes</a>
+                            <a id="groupfeatured" href="#">Featured</a>
+                            <a id="groupwork" href="#">Work</a>
+                            <a id="groupjam" href="#">Jams</a>
+                            <a id="groupschool" href="#">School</a>
+                            <a id="groupprototype" href="#">Prototypes</a>
                         </div>
                             <div class="anchoricons">
                                 <div hidden id="templateanchoricon">
@@ -106,7 +106,9 @@
         </main>
     </body>
     <script type="module">
-        import {generateEntriesFromURL} from './js/portfolio.js';
-        generateEntriesFromURL(document.location.search);
+        import {setupGroupButtons} from "./js/portfolio.js";
+        import {populatePageFromURL} from './js/portfolio.js';
+        setupGroupButtons();
+        populatePageFromURL(document.location.search);
     </script>
 </html>

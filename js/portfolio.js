@@ -1,5 +1,68 @@
-function highlightGroup(group)
+import * as data from "/js/data.js";
+
+// ======== population ========
+
+export function populatePageFromURL(search)
 {
+    let param = new URLSearchParams(search);
+
+    /*
+    let page = 0;
+    let entriesPerPage = 100;
+    if (param.has("page"))
+    {
+        page = parseInt(param.get("page"));
+        if (isNaN(page))
+        {
+            page = 0;
+        }
+    }
+    targetData = targetData.slice(page * entriesPerPage, (page + 1) * entriesPerPage);
+    */
+
+    populatePage(param.get("type"));
+}
+
+function populatePage(group)
+{
+    highlightGroupButton(group);
+    generateEntries(selectGroup(group));   
+}
+
+// ======== groups ========
+
+export function setupGroupButtons()
+{
+    document.getElementById("groupfeatured").addEventListener("click", function(e) {
+        e.preventDefault();
+        populatePage();
+    });
+    document.getElementById("groupwork").addEventListener("click", function(e) {
+        e.preventDefault();
+        populatePage("work");
+    });
+    document.getElementById("groupjam").addEventListener("click", function(e) {
+        e.preventDefault();
+        populatePage("jam");
+    });
+    document.getElementById("groupschool").addEventListener("click", function(e) {
+        e.preventDefault();
+        populatePage("school");
+    });
+    document.getElementById("groupprototype").addEventListener("click", function(e) {
+        e.preventDefault();
+        populatePage("prototype");
+    });
+}
+
+function highlightGroupButton(group)
+{
+    document.getElementById("groupfeatured").removeAttribute("class");
+    document.getElementById("groupwork").removeAttribute("class");
+    document.getElementById("groupjam").removeAttribute("class");
+    document.getElementById("groupschool").removeAttribute("class");
+    document.getElementById("groupprototype").removeAttribute("class");
+
     let groupId = group == null ? "groupfeatured" : "group" + group;
     document.getElementById(groupId).setAttribute("class", "active");
 }
@@ -21,7 +84,18 @@ function selectGroup(group)
     }
 }
 
-function generateEntryAnchorIcons(entry)
+// ======== entries ========
+
+function clearExistingEntryAnchorIcons()
+{
+    const main = document.querySelector("div .anchoricons");
+    for (let i = main.children.length - 1; i >= 1; i--)
+    {
+        main.removeChild(main.children[i]);
+    }
+}
+
+function generateEntryAnchorIcon(entry)
 {
     const main = document.querySelector("div .anchoricons");
     const template = document.getElementById("templateanchoricon");
@@ -33,6 +107,15 @@ function generateEntryAnchorIcons(entry)
     clone.querySelector(".anchorlink").setAttribute("href", "#" + entry.id);
     clone.querySelector(".anchorIcon").setAttribute("src", entry.icon);
     clone.querySelector(".anchorIcon").setAttribute("alt", entry.name + " Icon");
+}
+
+function clearExistingEntryBlocks()
+{
+    const main = document.querySelector("div .entries");
+    for (let i = main.children.length - 1; i >= 1; i--)
+    {
+        main.removeChild(main.children[i]);
+    }
 }
 
 function generateEntryBlock(entry, index)
@@ -136,11 +219,15 @@ function generateEntryBlock(entry, index)
 
 function generateEntries(entryList)
 {
+    // clear existing entries
+    clearExistingEntryAnchorIcons();
+    clearExistingEntryBlocks();
+
     // generate entries
     for (let i = 0; i < entryList.length; i++) 
     {
         let entry = entryList[i];
-        generateEntryAnchorIcons(entry);
+        generateEntryAnchorIcon(entry);
         generateEntryBlock(entry, i);
     }
 
@@ -148,29 +235,7 @@ function generateEntries(entryList)
     document.querySelector(".overlay").addEventListener("click", hideOverlay);
 }
 
-import * as data from "/js/data.js";
-
-export function generateEntriesFromURL(search)
-{
-    let param = new URLSearchParams(search);
-
-    /*
-    let page = 0;
-    let entriesPerPage = 100;
-    if (param.has("page"))
-    {
-        page = parseInt(param.get("page"));
-        if (isNaN(page))
-        {
-            page = 0;
-        }
-    }
-    targetData = targetData.slice(page * entriesPerPage, (page + 1) * entriesPerPage);
-    */
-    highlightGroup(param.get("type"));
-    let targetData = selectGroup(param.get("type"));
-    generateEntries(targetData);
-}
+// ======== overlay ========
 
 export function showOverlayVideo(videoPath)
 {
