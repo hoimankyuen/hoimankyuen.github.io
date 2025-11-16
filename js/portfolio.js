@@ -57,14 +57,14 @@ export function setupGroupButtons()
 
 function highlightGroupButton(group)
 {
-    document.getElementById("groupfeatured").removeAttribute("class");
-    document.getElementById("groupwork").removeAttribute("class");
-    document.getElementById("groupjam").removeAttribute("class");
-    document.getElementById("groupschool").removeAttribute("class");
-    document.getElementById("groupprototype").removeAttribute("class");
+    document.getElementById("groupfeatured").setAttribute("class", "groupingbutton");
+    document.getElementById("groupwork").setAttribute("class", "groupingbutton");
+    document.getElementById("groupjam").setAttribute("class", "groupingbutton");
+    document.getElementById("groupschool").setAttribute("class", "groupingbutton");
+    document.getElementById("groupprototype").setAttribute("class", "groupingbutton");
 
     let groupId = group == null ? "groupfeatured" : "group" + group;
-    document.getElementById(groupId).setAttribute("class", "active");
+    document.getElementById(groupId).setAttribute("class", "groupingbutton active");
 }
 
 function selectGroup(group)
