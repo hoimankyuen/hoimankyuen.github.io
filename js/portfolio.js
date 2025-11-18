@@ -29,27 +29,27 @@ function populatePage(group)
     generateEntries(selectGroup(group));   
 }
 
-// ======== groups ========
+// ======== anchor buttons ========
 
 export function setupGroupButtons()
 {
-    document.getElementById("groupfeatured").addEventListener("click", function(e) {
+    document.getElementById("group-featured").addEventListener("click", function(e) {
         e.preventDefault();
         populatePage();
     });
-    document.getElementById("groupwork").addEventListener("click", function(e) {
+    document.getElementById("group-work").addEventListener("click", function(e) {
         e.preventDefault();
         populatePage("work");
     });
-    document.getElementById("groupjam").addEventListener("click", function(e) {
+    document.getElementById("group-jam").addEventListener("click", function(e) {
         e.preventDefault();
         populatePage("jam");
     });
-    document.getElementById("groupschool").addEventListener("click", function(e) {
+    document.getElementById("group-school").addEventListener("click", function(e) {
         e.preventDefault();
         populatePage("school");
     });
-    document.getElementById("groupprototype").addEventListener("click", function(e) {
+    document.getElementById("group-prototype").addEventListener("click", function(e) {
         e.preventDefault();
         populatePage("prototype");
     });
@@ -57,14 +57,14 @@ export function setupGroupButtons()
 
 function highlightGroupButton(group)
 {
-    document.getElementById("groupfeatured").setAttribute("class", "groupingbutton");
-    document.getElementById("groupwork").setAttribute("class", "groupingbutton");
-    document.getElementById("groupjam").setAttribute("class", "groupingbutton");
-    document.getElementById("groupschool").setAttribute("class", "groupingbutton");
-    document.getElementById("groupprototype").setAttribute("class", "groupingbutton");
+    document.getElementById("group-featured").setAttribute("class", "anchor-button");
+    document.getElementById("group-work").setAttribute("class", "anchor-button");
+    document.getElementById("group-jam").setAttribute("class", "anchor-button");
+    document.getElementById("group-school").setAttribute("class", "anchor-button");
+    document.getElementById("group-prototype").setAttribute("class", "anchor-button");
 
-    let groupId = group == null ? "groupfeatured" : "group" + group;
-    document.getElementById(groupId).setAttribute("class", "groupingbutton active");
+    let groupId = group == null ? "group-featured" : "group-" + group;
+    document.getElementById(groupId).setAttribute("class", "anchor-button active");
 }
 
 function selectGroup(group)
@@ -88,7 +88,7 @@ function selectGroup(group)
 
 function clearExistingEntryAnchorIcons()
 {
-    const main = document.querySelector("div .anchoricons");
+    const main = document.querySelector("div .anchor-icons");
     for (let i = main.children.length - 1; i >= 1; i--)
     {
         main.removeChild(main.children[i]);
@@ -97,16 +97,16 @@ function clearExistingEntryAnchorIcons()
 
 function generateEntryAnchorIcon(entry)
 {
-    const main = document.querySelector("div .anchoricons");
-    const template = document.getElementById("templateanchoricon");
+    const main = document.querySelector("div .anchor-icons");
+    const template = document.getElementById("template-anchor-icon");
     const clone = template.cloneNode(true);
     clone.removeAttribute("id");
     clone.hidden = false;
     main.appendChild(clone);
 
-    clone.querySelector(".anchorlink").setAttribute("href", "#" + entry.id);
-    clone.querySelector(".anchorIcon").setAttribute("src", entry.icon);
-    clone.querySelector(".anchorIcon").setAttribute("alt", entry.name + " Icon");
+    clone.querySelector(".anchor-link").setAttribute("href", "#" + entry.id);
+    clone.querySelector(".anchor-icon").setAttribute("src", entry.icon);
+    clone.querySelector(".anchor-icon").setAttribute("alt", entry.name + " Icon");
 }
 
 function clearExistingEntryBlocks()
@@ -121,19 +121,19 @@ function clearExistingEntryBlocks()
 function generateEntryBlock(entry, index)
 {
     const main = document.querySelector("div .entries");
-    const template = document.getElementById("templateentry");
+    const template = document.getElementById("template-entry");
     const clone = template.cloneNode(true);
     clone.removeAttribute("id");
     clone.hidden = false;
     main.appendChild(clone);
 
     // title
-    clone.querySelector(".offsetanchor").setAttribute("id", entry.id);
-    clone.querySelector(".entryicon").setAttribute("src", entry.icon);
-    clone.querySelector(".entrytitle").textContent = entry.name;
+    clone.querySelector(".offset-anchor").setAttribute("id", entry.id);
+    clone.querySelector(".entry-icon").setAttribute("src", entry.icon);
+    clone.querySelector(".entry-title").textContent = entry.name;
     
     // descriptions
-    const descriptionTemplate = clone.querySelector(".entrydescription");
+    const descriptionTemplate = clone.querySelector(".entry-description");
     for (let i = 0; i < entry.descriptions.length; i++) 
     {
         const descriptionClone = descriptionTemplate.cloneNode(true);
@@ -143,7 +143,7 @@ function generateEntryBlock(entry, index)
     descriptionTemplate.hidden = true;
 
     // links
-    const linkTemplate = clone.querySelector(".entrylink");
+    const linkTemplate = clone.querySelector(".entry-link");
     for (let i = 0; i < entry.links.length; i++) 
     {
         const linkClone = linkTemplate.cloneNode(true);
@@ -151,26 +151,26 @@ function generateEntryBlock(entry, index)
         switch (entry.links[i].linktype)
         {
             case "game":
-                linkClone.querySelector(".entrylinkprefix").textContent = "Playable game can be accessed at:";
+                linkClone.querySelector(".entry-link-prefix").textContent = "Playable game can be accessed at:";
                 break;
             case "webpage":
-                linkClone.querySelector(".entrylinkprefix").textContent = "Website can be accessed at:";
+                linkClone.querySelector(".entry-link-prefix").textContent = "Website can be accessed at:";
                 break;
             case "repo":
-                linkClone.querySelector(".entrylinkprefix").textContent = "Project repository can be accessed at:";
+                linkClone.querySelector(".entry-link-prefix").textContent = "Project repository can be accessed at:";
                 break;
             default:
-                linkClone.querySelector(".entrylinkprefix").textContent = "Invalid ";
+                linkClone.querySelector(".entry-link-prefix").textContent = "Invalid ";
                 break;
         }
-        linkClone.querySelector(".entrylinksuffix").setAttribute("href", entry.links[i].link);
-        linkClone.querySelector(".entrylinksuffix").textContent = entry.links[i].link;
+        linkClone.querySelector(".entry-link-suffix").setAttribute("href", entry.links[i].link);
+        linkClone.querySelector(".entry-link-suffix").textContent = entry.links[i].link;
         linkTemplate.parentElement.appendChild(linkClone);
     }
     linkTemplate.hidden = true;
 
     // accomplishments
-    const accomplishmentTemplate = clone.querySelector(".entryaccomplishment");
+    const accomplishmentTemplate = clone.querySelector(".entry-accomplishment");
     for (let i = 0; i < entry.accomplishments.length; i++) 
     {
         const accomplishmentClone = accomplishmentTemplate.cloneNode(true);
@@ -180,12 +180,12 @@ function generateEntryBlock(entry, index)
     accomplishmentTemplate.hidden = true;
 
     // videos
-    const videoTemplate = clone.querySelector(".videowrapper");
+    const videoTemplate = clone.querySelector(".video-wrapper");
     for (let i = 0; i < entry.videos.length; i++) 
     {
         const videoClone = videoTemplate.cloneNode(true);
-        videoClone.querySelector(".entryvideo").setAttribute("src", entry.videos[i]);
-        videoClone.querySelector(".videoblocker").addEventListener("click", function() {
+        videoClone.querySelector(".entry-video").setAttribute("src", entry.videos[i]);
+        videoClone.querySelector(".video-blocker").addEventListener("click", function() {
             showOverlayVideo(entry.videos[i]);
         });
         videoTemplate.parentElement.appendChild(videoClone);
@@ -193,13 +193,13 @@ function generateEntryBlock(entry, index)
     videoTemplate.hidden = true;
 
     // screenshots
-    const screenshotTemplate = clone.querySelector(".screenshotwrapper");
+    const screenshotTemplate = clone.querySelector(".screenshot-wrapper");
     for (let i = 0; i < entry.screenshots.length; i++) 
     {
         const screenshotClone = screenshotTemplate.cloneNode(true);
-        screenshotClone.querySelector(".entryscreenshot").setAttribute("src", entry.screenshots[i]);
-        screenshotClone.querySelector(".entryscreenshot").setAttribute("alt", entry.name + " Screenshot " + (i + 1));
-        screenshotClone.querySelector(".entryscreenshot").addEventListener("click", function() {
+        screenshotClone.querySelector(".entry-screenshot").setAttribute("src", entry.screenshots[i]);
+        screenshotClone.querySelector(".entry-screenshot").setAttribute("alt", entry.name + " Screenshot " + (i + 1));
+        screenshotClone.querySelector(".entry-screenshot").addEventListener("click", function() {
             showOverlayScreenshot(entry.screenshots[i]);
         });
         screenshotTemplate.parentElement.appendChild(screenshotClone);
@@ -209,11 +209,11 @@ function generateEntryBlock(entry, index)
     // aligment
     if (index % 2 == 1)
     {
-        clone.querySelector(".title").setAttribute("class", "titleinversed");
-        clone.querySelector(".entryicon").setAttribute("class", "entryiconinversed");
-        clone.querySelector(".entrytitle").setAttribute("class", "entrytitleinversed");
-        clone.querySelector('.textcolumn').setAttribute("class", "textcolumninversed");
-        clone.querySelector('.mediacolumn').setAttribute("class", "mediacolumninversed");
+        clone.querySelector(".title").setAttribute("class", "title inverse");
+        clone.querySelector(".entry-icon").setAttribute("class", "entry-icon inverse");
+        clone.querySelector(".entry-title").setAttribute("class", "entry-title inverse");
+        clone.querySelector('.text-column').setAttribute("class", "text-column inverse");
+        clone.querySelector('.media-column').setAttribute("class", "media-column inverse");
     }
 }
 
@@ -240,26 +240,26 @@ function generateEntries(entryList)
 export function showOverlayVideo(videoPath)
 {
     document.querySelector(".overlay").style.display = "block";
-    document.querySelector(".overlayvideo").style.display = "block";
-    document.querySelector(".overlayvideo").setAttribute("src", videoPath);
-    document.querySelector(".overlayscreenshot").style.display = "none";
-    document.querySelector(".overlayscreenshot").setAttribute("src", "");
+    document.querySelector(".overlay-video").style.display = "block";
+    document.querySelector(".overlay-video").setAttribute("src", videoPath);
+    document.querySelector(".overlay-screenshot").style.display = "none";
+    document.querySelector(".overlay-screenshot").setAttribute("src", "");
 }
 
 export function showOverlayScreenshot(screenshotPath)
 {
     document.querySelector(".overlay").style.display = "block";
-    document.querySelector(".overlayvideo").style.display = "none";
-    document.querySelector(".overlayvideo").setAttribute("src", "");
-    document.querySelector(".overlayscreenshot").style.display = "block";
-    document.querySelector(".overlayscreenshot").setAttribute("src", screenshotPath);
+    document.querySelector(".overlay-video").style.display = "none";
+    document.querySelector(".overlay-video").setAttribute("src", "");
+    document.querySelector(".overlay-screenshot").style.display = "block";
+    document.querySelector(".overlay-screenshot").setAttribute("src", screenshotPath);
 }
 
 export function hideOverlay()
 {
     document.querySelector(".overlay").style.display = "none";
-    document.querySelector(".overlayvideo").style.display = "none";
-    document.querySelector(".overlayvideo").setAttribute("src", "");
-    document.querySelector(".overlayscreenshot").style.display = "none";
-    document.querySelector(".overlayscreenshot").setAttribute("src", "");
+    document.querySelector(".overlay-video").style.display = "none";
+    document.querySelector(".overlay-video").setAttribute("src", "");
+    document.querySelector(".overlay-screenshot").style.display = "none";
+    document.querySelector(".overlay-screenshot").setAttribute("src", "");
 }
