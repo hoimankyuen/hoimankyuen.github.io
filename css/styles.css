@@ -26,6 +26,9 @@
     --groupbutton-hover-text-color: #ffffff;
     --groupbutton-active-text-color: #252525;
 
+    --scrollbar-foreground-color: #00a6d3;
+    --scrollbar-background-color: #f4f4f4;
+
     --transparent-color: rgb(0,0,0,0);
     --overlay-color: rgb(0,0,0,0.75);
     --preview-background-color: #000000;
@@ -144,7 +147,7 @@ main .content {
     overflow-x: hidden;
     overflow-y: visible;
     text-align: justify;
-    scrollbar-color: var(--button-normal-color) var(--content-background-color);
+    scrollbar-color: var(--scrollbar-foreground-color) var(--scrollbar-background-color);
     scrollbar-width: auto;
 }
 @media only screen and (max-width: 1000px) {
