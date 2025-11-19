@@ -72,14 +72,16 @@ nav .links a {
     color: var(--navbutton-normal-text-color);
     display: block;
     float: right;
-    margin: 0px 5px 5px 5px;
+    margin: 5px;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.5s;
     border-radius: 8px;
-    
+    border-style: solid;
+    border-color: var(--navbutton-active-background-color);
+    border-width: 1px;
 }
 nav .links a:hover {
     background-color: var(--navbutton-hover-background-color);
@@ -215,6 +217,9 @@ main .content a {
     font-weight: bold;
     transition: background-color 0.5s;
     border-radius: 8px;
+    border-style: solid;
+    border-color: var(--groupbutton-active-background-color);
+    border-width: 1px;
 }
 .portfolio-page .anchor-button:hover {
     background-color: var(--groupbutton-hover-background-color);
@@ -365,7 +370,6 @@ main .content a {
     .portfolio-page .media-column.inverse {
         order: 0;
     }
-
 }
 
 /* content (portfolio overlay)*/
