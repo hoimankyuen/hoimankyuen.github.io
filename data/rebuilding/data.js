@@ -25,5 +25,6 @@ export let data =
         "/data/rebuilding/screenshot1.png",
         "/data/rebuilding/screenshot2.png",
         "/data/rebuilding/screenshot3.png"
-    ]
+    ],
+    background: "/data/rebuilding/screenshot3.png"
 };

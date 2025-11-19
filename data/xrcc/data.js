@@ -27,5 +27,6 @@ export let data =
         "/data/xrcc/screenshot1.jpg",
         "/data/xrcc/screenshot2.png",
         "/data/xrcc/screenshot3.jpg"
-    ]
+    ],
+    background: "/data/xrcc/screenshot2.png"
 };

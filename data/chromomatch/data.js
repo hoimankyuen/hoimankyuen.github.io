@@ -22,5 +22,6 @@ export let data =
     screenshots: [
         "/data/chromomatch/screenshot1.png",
         "/data/chromomatch/screenshot2.png"
-    ]
+    ],
+    background: "/data/chromomatch/screenshot2.png"
 };

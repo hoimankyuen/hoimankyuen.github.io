@@ -31,5 +31,6 @@ export let data =
         "/data/remotestranding/screenshot1.png",
         "/data/remotestranding/screenshot2.png",
         "/data/remotestranding/screenshot3.png"
-    ]
+    ],
+    background: "/data/remotestranding/screenshot2.png"
 };

@@ -117,7 +117,6 @@ body {
     }
 }
 main {
-    background-color: var(--body-background-color);
     width: 100%;
     
     display: grid;
@@ -138,13 +137,14 @@ main .center{
     display: grid;
     grid-template-columns: minmax(auto, 1200px);
     justify-content: center;
+    z-index: -1;
 }
 
 /* content (general)*/
 main .content {
     color: var(--text-color);
     background-color: var(--content-background-color);
-    margin: 0px 50px 0px 50px;
+    margin: 0px 100px;
     overflow-x: hidden;
     overflow-y: visible;
     text-align: justify;
@@ -188,6 +188,28 @@ main .content h4 {
 main .content a {
     color: var(--link-color);
     font-weight: bold;
+}
+main .background-image {
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    background: rgb(255, 255, 255, 0);
+    background-blend-mode: overlay;
+
+    filter: saturate(50%) blur(8px);
+    -webkit-filter: saturate(50%) blur(8px);
+    transform: scale(1.02);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+
+    z-index: -1;
 }
 
 /* content (index)*/

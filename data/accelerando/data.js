@@ -25,5 +25,6 @@ export let data =
     screenshots: [
         "/data/accelerando/screenshot1.png",
         "/data/accelerando/screenshot2.png"
-    ]
+    ],
+    background: "/data/accelerando/screenshot2.png"
 };

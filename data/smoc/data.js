@@ -30,4 +30,6 @@ export let data =
         "/data/smoc/screenshot2.png",
         "/data/smoc/screenshot3.png"
     ]
+    ,
+    background: "/data/smoc/screenshot2.png"
 };

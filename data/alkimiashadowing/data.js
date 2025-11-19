@@ -31,4 +31,6 @@ export let data =
         "/data/alkimiashadowing/screenshot2.png",
         "/data/alkimiashadowing/screenshot3.png"
     ]
+    ,
+    background: "/data/alkimiashadowing/screenshot2.png"
 };

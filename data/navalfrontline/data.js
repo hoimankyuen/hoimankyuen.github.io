@@ -29,5 +29,6 @@ export let data =
         "/data/navalfrontline/screenshot1.jpeg",
         "/data/navalfrontline/screenshot2.png",
         "/data/navalfrontline/screenshot3.png"
-    ]
+    ],
+    background: "/data/navalfrontline/screenshot2.png"
 };

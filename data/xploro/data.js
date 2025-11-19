@@ -38,5 +38,6 @@ export let data =
         "/data/xploro/screenshot4.png",
         "/data/xploro/screenshot5.png",
         "/data/xploro/screenshot6.png"
-    ]
+    ],
+    background: "/data/xploro/screenshot1.png"
 };

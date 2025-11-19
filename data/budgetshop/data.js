@@ -29,5 +29,6 @@ export let data =
         "/data/budgetshop/screenshot1.png",
         "/data/budgetshop/screenshot2.png",
         "/data/budgetshop/screenshot3.png"
-    ]
+    ],
+    background: "/data/budgetshop/screenshot3.png"
 };

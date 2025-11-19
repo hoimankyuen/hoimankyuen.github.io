@@ -30,5 +30,6 @@ export let data =
         "/data/clubgrenade/screenshot1.jpg",
         "/data/clubgrenade/screenshot2.jpg",
         "/data/clubgrenade/screenshot3.jpg"
-    ]
+    ],
+    background: "/data/clubgrenade/screenshot2.jpg"
 };

@@ -26,7 +26,8 @@ export function populatePageFromURL(search)
 function populatePage(group)
 {
     highlightGroupButton(group);
-    generateEntries(selectGroup(group));   
+    generateEntries(selectGroup(group));
+    setupScrollCheck();
 }
 
 // ======== anchor buttons ========
@@ -108,7 +109,7 @@ function generateEntryAnchorIcon(entry)
     clone.querySelector(".anchor-icon").setAttribute("alt", entry.name + " Icon");
     clone.querySelector(".anchor-icon").addEventListener("click", function(e) {
         e.preventDefault();
-        scrollToTargetAdjusted(entry.id);
+        scrollToTarget(entry.id);
     });
 }
 
@@ -240,18 +241,58 @@ function generateEntries(entryList)
 
 // ======== scrolling ========
 
-function scrollToTargetAdjusted(targetId){
-    let elementPosition = document.getElementById(targetId).offsetTop;
+function scrollToTarget(targetId)
+{
+    document.querySelector(".content").scrollTo({
+         top: getAnchorPositionOffset(document.getElementById(targetId))
+    });
+}
+
+function setupScrollCheck()
+{
+    let content = document.querySelector(".content");
+    let backgroundImage = document.querySelector(".background-image");
+    let anchors = document.getElementsByClassName("offset-anchor");
+    let screenshots = ["/images/backgrounds/desk_background.png"];
+    for (let i = 1; i < anchors.length; i++)
+    {
+        screenshots[i] = data.getEntryById(anchors[i].id).background;
+    }
+
+    content.addEventListener("scroll", function(e) {
+        let selectedImage = "";
+        let transition = 0;
+        const transitionLength = 120;
+        for (let i = anchors.length - 1; i >= 0; i--)
+        {
+            let position = (i == 0 ? 0 : getAnchorPositionOffset(anchors[i])) - transitionLength;
+            if (content.scrollTop >= position && selectedImage == "")
+            {
+                selectedImage = screenshots[i];
+            }
+            transition = Math.max(transition, (transitionLength - Math.abs(position - content.scrollTop)) / transitionLength);
+        }
+        backgroundImage.style.backgroundImage = "url('" + selectedImage + "')";
+        backgroundImage.style.backgroundColor = "rgb(255, 255, 255, " + lerp(0.25, 1, transition) + ")";
+    });
+}
+
+function lerp(a, b, t)
+{
+    return t <= 0 ? a : t >= 1 ? b : a + (b - a) * t;
+}
+
+function getAnchorPositionOffset(offsetAnchorElement)
+{
+    let elementPosition = offsetAnchorElement.offsetTop;
 
     let sectionHeaderHeight = document.querySelector(".section-header").offsetHeight;
     let sectionBodyHeight = document.querySelector(".section-body").offsetHeight;
     let heights = sectionHeaderHeight + sectionBodyHeight;
-  
+
     let entriesPosition = document.querySelector(".entries").offsetTop;
 
-    document.querySelector(".content").scrollTo({
-         top: heights + elementPosition - entriesPosition
-    });
+    return heights + elementPosition - entriesPosition;
 }
 
 // ======== overlay ========
@@ -281,4 +322,11 @@ export function hideOverlay()
     document.querySelector(".overlay-video").setAttribute("src", "");
     document.querySelector(".overlay-screenshot").style.display = "none";
     document.querySelector(".overlay-screenshot").setAttribute("src", "");
+}
+
+// ======== debug utils ========
+
+function log(message)
+{
+    document.querySelector(".name").innerHTML = message;
 }

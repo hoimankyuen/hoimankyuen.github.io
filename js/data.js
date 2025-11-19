@@ -67,3 +67,40 @@ export let allPrototypeData = [
     planeTacticsData,
     dicingHerosData
 ];
+
+export function getEntryById(id)
+{
+    let data = getEntryByIdIn(id, allJamData);
+    if (data != null)
+    {
+        return data;
+    }
+    data = getEntryByIdIn(id, allWorkData);
+    if (data != null)
+    {
+        return data;
+    }
+    data = getEntryByIdIn(id, allSchoolData);
+    if (data != null)
+    {
+        return data;
+    }
+    data = getEntryByIdIn(id, allPrototypeData);
+    if (data != null)
+    {
+        return data;
+    }
+    return null;
+}
+
+function getEntryByIdIn(id, entryList)
+{
+    for (let i = 0; i < entryList.length; i++)
+    {
+        if (entryList[i].id == id)
+        {
+            return entryList[i];
+        }
+    }
+    return null;
+}

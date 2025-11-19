@@ -32,5 +32,6 @@ export let data =
     screenshots: [
         "/data/template/screenshot1.png",
         "/data/template/screenshot2.png"
-    ]
+    ],
+    background: "/data/template/screenshot2.png"
 };

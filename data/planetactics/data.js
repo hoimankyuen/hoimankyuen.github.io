@@ -29,5 +29,6 @@ export let data =
     screenshots: [
         "/data/planetactics/screenshot1.png",
         "/data/planetactics/screenshot2.png"
-    ]
+    ],
+    background: "/data/planetactics/screenshot2.png"
 };

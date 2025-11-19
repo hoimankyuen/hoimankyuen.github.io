@@ -29,5 +29,6 @@ export let data =
     screenshots: [
         "/data/dicingheros/screenshot1.png",
         "/data/dicingheros/screenshot2.png"
-    ]
+    ],
+    background: "/data/dicingheros/screenshot2.png"
 };

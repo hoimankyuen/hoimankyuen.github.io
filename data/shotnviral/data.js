@@ -22,5 +22,6 @@ export let data =
     screenshots: [
         "/data/shotnviral/screenshot1.JPG",
         "/data/shotnviral/screenshot2.png"
-    ]
+    ],
+    background: "/data/shotnviral/screenshot2.png"
 };

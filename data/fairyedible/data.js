@@ -33,5 +33,6 @@ export let data =
         "/data/fairyedible/screenshot1.png",
         "/data/fairyedible/screenshot2.png",
         "/data/fairyedible/screenshot3.png"
-    ]
+    ],
+    background: "/data/fairyedible/screenshot2.png"
 };
