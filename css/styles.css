@@ -457,12 +457,9 @@ main .content a {
     height: 36px;
     padding: 5px;
 }
-.contact-page table .heightalign {
-    height:24px;
-    width: auto;
-}
-.contact-page table .widthalign {
-    width:24px;
+.contact-page table img {
+    width: 24px;
+    vertical-align: text-bottom;
 }
 
 /* footer */
