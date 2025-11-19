@@ -2,6 +2,7 @@
 :root {
     --header-background-color: #f4f4f4;
     --subheader-background-color: #00a6d3;
+    --group-background-color: #252525;
     --content-background-color: #f4f4f4;
     --footer-background-color: #252525;
 
@@ -20,8 +21,8 @@
     --nav-button-hover-text-color: #252525;
     --nav-button-active-text-color: #ffffff;
 
-    --group-button-normal-background-color: #00a6d3;
-    --group-button-hover-background-color: #77d0e9;
+    --group-button-normal-background-color: #252525;
+    --group-button-hover-background-color: #949494;
     --group-button-active-background-color: #ffffff;
     --group-button-normal-text-color: #ffffff;
     --group-button-hover-text-color: #ffffff;
@@ -230,7 +231,7 @@ main .link-table img {
 /* content (portfolio top)*/
 .portfolio-page .anchor-navbar {
     position: sticky;
-    background-color: var(--subheader-background-color);
+    background-color: var(--group-background-color);
     top: 0px;
     padding: 0px 30px;
     z-index: 2;
