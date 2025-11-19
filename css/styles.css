@@ -17,8 +17,8 @@
     --nav-button-normal-background-color: #f4f4f4;
     --nav-button-hover-background-color: #77d0e9;
     --nav-button-active-background-color: #00a6d3;
-    --nav-button-normal-text-color: #252525;
-    --nav-button-hover-text-color: #252525;
+    --nav-button-normal-text-color: #00a6d3;
+    --nav-button-hover-text-color: #00a6d3;
     --nav-button-active-text-color: #ffffff;
 
     --group-button-normal-background-color: #252525;
@@ -31,6 +31,7 @@
     --scrollbar-foreground-color: #00a6d3;
     --scrollbar-background-color: #f4f4f4;
 
+    --nav-shadow-color: rgb(0,0,0,0.25);
     --icon-shadow-color: rgb(0,0,0,0.5);
 
     --transparent-color: rgb(0,0,0,0);
@@ -51,6 +52,8 @@ nav {
 
     display: grid;
     align-items: end;
+
+    box-shadow: 0px 3px 3px var(--nav-shadow-color);
 }
 @media only screen and (max-width: 1000px) {
     nav {
@@ -238,7 +241,7 @@ main .link-table img {
 }
 .portfolio-page .anchor-buttons {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
 }
 .portfolio-page .anchor-button {
     background-color: var(--group-button-normal-background-color);
@@ -276,7 +279,7 @@ main .link-table img {
     margin-top: 15px;
     margin-bottom: 0px;
     transition: margin 0.1s;
-    filter: drop-shadow(2px 2px 0px var(--icon-shadow-color));
+    filter: drop-shadow(1px 1px 1px var(--icon-shadow-color));
 }
 .portfolio-page .anchor-icon:hover {
     margin-top: 0px;
@@ -307,7 +310,7 @@ main .link-table img {
 .portfolio-page .entry-icon {
     border-radius: 50%;
     width: 64px;
-    filter: drop-shadow(3px 3px 0px var(--icon-shadow-color));
+    filter: drop-shadow(1px 1px 1px var(--icon-shadow-color));
 }
 
 .portfolio-page .column-layout {
@@ -355,7 +358,7 @@ main .link-table img {
     border-radius: 16px;
     border: none;
     box-shadow: none;
-    filter: drop-shadow(3px 3px 0px var(--icon-shadow-color));
+    filter: drop-shadow(1px 1px 1px var(--icon-shadow-color));
 }
 .portfolio-page .video-blocker {
     position: absolute;
@@ -373,7 +376,7 @@ main .link-table img {
     width: 100%;
     border-radius: 16px;
     cursor: pointer;
-    filter: drop-shadow(3px 3px 0px var(--icon-shadow-color));
+    filter: drop-shadow(1px 1px 1px var(--icon-shadow-color));
 }
 
 @media only screen and (min-width: 1000px) {
@@ -430,7 +433,7 @@ main .link-table img {
     background-color: var(--preview-background-color);
     border-radius: 16px;
     height: 80%;
-    filter: drop-shadow(5px 5px 0px var(--icon-shadow-color));
+    filter: drop-shadow(4px 4px 4px var(--icon-shadow-color));
 }
 @media only screen and (max-width: 1000px) {
     .portfolio-page .overlay-video {
@@ -447,7 +450,7 @@ main .link-table img {
     background-color: var(--preview-background-color);
     border-radius: 16px;
     max-height: 80%;
-    filter: drop-shadow(5px 5px 0px var(--icon-shadow-color));
+    filter: drop-shadow(4px 4px 4px var(--icon-shadow-color));
 }
 @media only screen and (max-width: 1000px) {
     .portfolio-page .overlay-screenshot {
