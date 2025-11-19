@@ -267,6 +267,7 @@ main .link-table img {
     color: var(--group-button-active-text-color);
 }
 .portfolio-page .anchor-icons {
+    min-height: 71px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

@@ -5,22 +5,13 @@ import * as data from "/js/data.js";
 export function populatePageFromURL(search)
 {
     let param = new URLSearchParams(search);
-
-    /*
-    let page = 0;
-    let entriesPerPage = 100;
-    if (param.has("page"))
+    let type = param.get("type");
+    let entry = param.get("entry");
+    populatePage(type);
+    if (entry != null)
     {
-        page = parseInt(param.get("page"));
-        if (isNaN(page))
-        {
-            page = 0;
-        }
+        scrollToEntry(entry);
     }
-    targetData = targetData.slice(page * entriesPerPage, (page + 1) * entriesPerPage);
-    */
-
-    populatePage(param.get("type"));
 }
 
 function populatePage(group)
@@ -28,6 +19,7 @@ function populatePage(group)
     highlightGroupButton(group);
     generateEntries(selectGroup(group));
     setupScrollCheck();
+    scrollToTop();
 }
 
 // ======== anchor buttons ========
@@ -102,7 +94,7 @@ function generateEntryAnchorIcon(entry)
     clone.querySelector(".anchor-icon").setAttribute("alt", entry.name + " Icon");
     clone.querySelector(".anchor-icon").addEventListener("click", function(e) {
         e.preventDefault();
-        scrollToTarget(entry.id);
+        scrollToEntry(entry.id);
     });
 }
 
@@ -234,11 +226,23 @@ function generateEntries(entryList)
 
 // ======== scrolling ========
 
-function scrollToTarget(targetId)
+function scrollToEntry(entryId)
 {
-    document.querySelector(".content").scrollTo({
-         top: getAnchorPositionOffset(document.getElementById(targetId))
-    });
+    let content = document.querySelector(".content");
+    let targetPosition = getAnchorPositionOffset(document.getElementById(entryId));
+    content.scrollTo({ top: targetPosition });
+}
+
+function scrollToTop()
+{
+    let content = document.querySelector(".content");
+    let anchors = document.getElementsByClassName("offset-anchor");
+    let targetPosition = content.scrollTop;
+    if (anchors.length > 1)
+    {
+        targetPosition = Math.min(targetPosition, getAnchorPositionOffset(anchors[1]));
+    }
+    content.scrollTo({ top: targetPosition });
 }
 
 function setupScrollCheck()
