@@ -104,9 +104,12 @@ function generateEntryAnchorIcon(entry)
     clone.hidden = false;
     main.appendChild(clone);
 
-    clone.querySelector(".anchor-link").setAttribute("href", "#" + entry.id);
     clone.querySelector(".anchor-icon").setAttribute("src", entry.icon);
     clone.querySelector(".anchor-icon").setAttribute("alt", entry.name + " Icon");
+    clone.querySelector(".anchor-icon").addEventListener("click", function(e) {
+        e.preventDefault();
+        scrollToTargetAdjusted(entry.id);
+    });
 }
 
 function clearExistingEntryBlocks()
@@ -233,6 +236,22 @@ function generateEntries(entryList)
 
     // add listeners
     document.querySelector(".overlay").addEventListener("click", hideOverlay);
+}
+
+// ======== scrolling ========
+
+function scrollToTargetAdjusted(targetId){
+    let elementPosition = document.getElementById(targetId).offsetTop;
+
+    let sectionHeaderHeight = document.querySelector(".section-header").offsetHeight;
+    let sectionBodyHeight = document.querySelector(".section-body").offsetHeight;
+    let heights = sectionHeaderHeight + sectionBodyHeight;
+  
+    let entriesPosition = document.querySelector(".entries").offsetTop;
+
+    document.querySelector(".content").scrollTo({
+         top: heights + elementPosition - entriesPosition
+    });
 }
 
 // ======== overlay ========

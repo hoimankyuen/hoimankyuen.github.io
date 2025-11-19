@@ -254,11 +254,6 @@ main .content a {
 }
 
 /* content (portfolio entries)*/
-.portfolio-page .offset-anchor {
-    position:relative; 
-    top:calc(0px - 196px - 10px);
-}
-
 .portfolio-page .title {
     background-color: var(--sectionheader-background-color);
     color: var(--sectionheader-text-color);
