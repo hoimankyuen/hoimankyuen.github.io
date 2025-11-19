@@ -46,13 +46,9 @@ export function setupGroupButtons()
         e.preventDefault();
         populatePage("jam");
     });
-    document.getElementById("group-school").addEventListener("click", function(e) {
+    document.getElementById("group-other").addEventListener("click", function(e) {
         e.preventDefault();
-        populatePage("school");
-    });
-    document.getElementById("group-prototype").addEventListener("click", function(e) {
-        e.preventDefault();
-        populatePage("prototype");
+        populatePage("other");
     });
 }
 
@@ -61,8 +57,7 @@ function highlightGroupButton(group)
     document.getElementById("group-featured").setAttribute("class", "anchor-button");
     document.getElementById("group-work").setAttribute("class", "anchor-button");
     document.getElementById("group-jam").setAttribute("class", "anchor-button");
-    document.getElementById("group-school").setAttribute("class", "anchor-button");
-    document.getElementById("group-prototype").setAttribute("class", "anchor-button");
+    document.getElementById("group-other").setAttribute("class", "anchor-button");
 
     let groupId = group == null ? "group-featured" : "group-" + group;
     document.getElementById(groupId).setAttribute("class", "anchor-button active");
@@ -76,10 +71,8 @@ function selectGroup(group)
             return data.allJamData;
         case "work":
             return data.allWorkData;
-        case "school":
-            return data.allSchoolData;
-        case "prototype":
-            return data.allPrototypeData;
+        case "other":
+            return data.allOtherData;
         default:
             return data.featuredData;
     }

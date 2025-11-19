@@ -57,13 +57,10 @@ export let allWorkData = [
     chromomatchData
 ];
 
-export let allSchoolData = [
+export let allOtherData = [
     clubGrenadeData,
     rebuildingData,
-    accelerandoData
-];
-
-export let allPrototypeData = [
+    accelerandoData,
     planeTacticsData,
     dicingHerosData
 ];
@@ -80,12 +77,7 @@ export function getEntryById(id)
     {
         return data;
     }
-    data = getEntryByIdIn(id, allSchoolData);
-    if (data != null)
-    {
-        return data;
-    }
-    data = getEntryByIdIn(id, allPrototypeData);
+    data = getEntryByIdIn(id, allOtherData);
     if (data != null)
     {
         return data;

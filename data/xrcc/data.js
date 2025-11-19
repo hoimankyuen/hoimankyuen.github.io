@@ -12,7 +12,7 @@ export let data =
     ],
     links: [
         {
-            linktype: "website",
+            linktype: "webpage",
             link: "https://www.votanic.com/xrcc/"
         }
     ],
