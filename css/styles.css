@@ -104,12 +104,12 @@ body {
 }   
 @media only screen and (max-width: 1000px) {
     body {
-        margin: 103px 0px 0px 0px;
+        margin: 110px 0px 0px 0px;
     }
 }
 @media only screen and (min-width: 1000px) {
     body {
-        margin: 54px 0px 0px 0px;
+        margin: 56px 0px 0px 0px;
     }
 }
 main {
@@ -122,12 +122,12 @@ main {
 }
 @media only screen and (max-width: 1000px) {
      main {
-        min-height: calc(100vh - 103px);
+        min-height: calc(100vh - 110px - 34px);
     }
 }
 @media only screen and (min-width: 1000px) {
     main {
-        min-height: calc(100vh - 54px);
+        min-height: calc(100vh - 56px -34px);
     }
 }
 main .center{
@@ -149,12 +149,12 @@ main .content {
 }
 @media only screen and (max-width: 1000px) {
     main .content {    
-        height: calc(100vh - 103px - 34px);
+        height: calc(100vh - 110px - 34px);
     }
 }
 @media only screen and (min-width: 1000px) {
         main .content {    
-        height: calc(100vh - 54px - 34px);
+        height: calc(100vh - 56px - 34px);
     }
 }
 main .section-header {
@@ -460,7 +460,7 @@ main .content a {
 }
 
 /* footer */
-main .footer {
+footer {
     overflow: hidden;
     color: var(--footer-text-color);
     background-color: var(--footer-background-color);
