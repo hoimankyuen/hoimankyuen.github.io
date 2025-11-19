@@ -38,7 +38,7 @@ export let featuredData = [
     navalFrontlineData,
     smocData,
     xrccData,
-    rebuildingData
+    budgetShopData
 ];
 
 export let allJamData = [

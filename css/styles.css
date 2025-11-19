@@ -1,30 +1,31 @@
 /* variables */
 :root {
     --header-background-color: #f4f4f4;
-    --sectionheader-background-color: #00a6d3;
+    --subheader-background-color: #00a6d3;
     --content-background-color: #f4f4f4;
     --footer-background-color: #252525;
 
     --body-background-color: #ff0000;
 
-    --sectionheader-text-color: #ffffff;
+    --header-text-color: #252525;
+    --subheader-text-color: #ffffff;
     --normal-text-color: #252525;
     --link-text-color: #00a6d3;
     --footer-text-color: #808080;
 
-    --navbutton-normal-background-color: #f4f4f4;
-    --navbutton-hover-background-color: #77d0e9;
-    --navbutton-active-background-color: #00a6d3;
-    --navbutton-normal-text-color: #252525;
-    --navbutton-hover-text-color: #252525;
-    --navbutton-active-text-color: #ffffff;
+    --nav-button-normal-background-color: #f4f4f4;
+    --nav-button-hover-background-color: #77d0e9;
+    --nav-button-active-background-color: #00a6d3;
+    --nav-button-normal-text-color: #252525;
+    --nav-button-hover-text-color: #252525;
+    --nav-button-active-text-color: #ffffff;
 
-    --groupbutton-normal-background-color: #00a6d3;
-    --groupbutton-hover-background-color: #77d0e9;
-    --groupbutton-active-background-color: #ffffff;
-    --groupbutton-normal-text-color: #ffffff;
-    --groupbutton-hover-text-color: #ffffff;
-    --groupbutton-active-text-color: #252525;
+    --group-button-normal-background-color: #00a6d3;
+    --group-button-hover-background-color: #77d0e9;
+    --group-button-active-background-color: #ffffff;
+    --group-button-normal-text-color: #ffffff;
+    --group-button-hover-text-color: #ffffff;
+    --group-button-active-text-color: #252525;
 
     --scrollbar-foreground-color: #00a6d3;
     --scrollbar-background-color: #f4f4f4;
@@ -39,7 +40,7 @@
 /* navigation bar */
 nav {
     overflow: hidden;
-    color: var(--text-color);
+    color: var(--header-text-color);
     background-color: var(--header-background-color);
 
     position: fixed;
@@ -68,12 +69,12 @@ nav .name {
     font-weight: bold;
     font-size: 36px;
 }
-nav .links {
+nav .nav-buttons {
     padding: 0px 20px;
 }
-nav .links a {
-    background-color: var(--navbutton-normal-background-color);
-    color: var(--navbutton-normal-text-color);
+nav .nav-button {
+    background-color: var(--nav-button-normal-background-color);
+    color: var(--nav-button-normal-text-color);
     display: block;
     float: right;
     margin: 5px;
@@ -84,16 +85,16 @@ nav .links a {
     transition: background-color 0.5s;
     border-radius: 8px;
     border-style: solid;
-    border-color: var(--navbutton-active-background-color);
+    border-color: var(--nav-button-active-background-color);
     border-width: 1px;
 }
-nav .links a:hover {
-    background-color: var(--navbutton-hover-background-color);
-    color: var(--navbutton-hover-text-color);
+nav .nav-button:hover {
+    background-color: var(--nav-button-hover-background-color);
+    color: var(--nav-button-hover-text-color);
 }
-nav .links a.active {
-    background-color: var(--navbutton-active-background-color);
-    color: var(--navbutton-active-text-color);
+nav .nav-button.active {
+    background-color: var(--nav-button-active-background-color);
+    color: var(--nav-button-active-text-color);
 }
 
 /* body backgrounds */
@@ -162,32 +163,25 @@ main .content {
     }
 }
 main .section-header {
-    background-color: var(--sectionheader-background-color);
-    color: var(--sectionheader-text-color);
+    background-color: var(--subheader-background-color);
+    color: var(--subheader-text-color);
     padding: 20px 30px;
 }
 main .section-body {
     padding: 20px 30px;
 }
 main .content h1 {
-    color: var(--title-color);
     text-align: center;
     margin:0px;
 }
 main .content h2 {
-    color: var(--title-color);
     text-align: center;
     margin:0px;
 }
-main .content h3 {
-    color: var(--title-color);
-}
-main .content h4 {
-    color: var(--title-color);
-}
 main .content a {
-    color: var(--link-color);
+    color: var(--link-text-color);
     font-weight: bold;
+    text-decoration: none;
 }
 main .background-image {
     overflow: hidden;
@@ -211,6 +205,19 @@ main .background-image {
 
     z-index: -1;
 }
+main .link-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+main .link-table td {
+    height: 36px;
+    padding: 5px;
+}
+main .link-table img {
+    width: 24px;
+    vertical-align: text-bottom;
+}
+
 
 /* content (index)*/
 .indexpage .banner {
@@ -223,7 +230,7 @@ main .background-image {
 /* content (portfolio top)*/
 .portfolio-page .anchor-navbar {
     position: sticky;
-    background-color: var(--sectionheader-background-color);
+    background-color: var(--subheader-background-color);
     top: 0px;
     padding: 0px 30px;
     z-index: 2;
@@ -233,8 +240,8 @@ main .background-image {
     grid-template-columns: auto auto auto auto auto;
 }
 .portfolio-page .anchor-button {
-    background-color: var(--groupbutton-normal-background-color);
-    color: var(--groupbutton-normal-text-color);
+    background-color: var(--group-button-normal-background-color);
+    color: var(--group-button-normal-text-color);
     display: block;
     margin: 5px;
     padding: 2.5px 0px;
@@ -244,16 +251,16 @@ main .background-image {
     transition: background-color 0.5s;
     border-radius: 8px;
     border-style: solid;
-    border-color: var(--groupbutton-active-background-color);
+    border-color: var(--group-button-active-background-color);
     border-width: 1px;
 }
 .portfolio-page .anchor-button:hover {
-    background-color: var(--groupbutton-hover-background-color);
-    color: var(--groupbutton-hover-text-color);
+    background-color: var(--group-button-hover-background-color);
+    color: var(--group-button-hover-text-color);
 }
 .portfolio-page .anchor-button.active {
-    background-color: var(--groupbutton-active-background-color);
-    color: var(--groupbutton-active-text-color);
+    background-color: var(--group-button-active-background-color);
+    color: var(--group-button-active-text-color);
 }
 .portfolio-page .anchor-icons {
     display: flex;
@@ -277,8 +284,8 @@ main .background-image {
 
 /* content (portfolio entries)*/
 .portfolio-page .title {
-    background-color: var(--sectionheader-background-color);
-    color: var(--sectionheader-text-color);
+    background-color: var(--subheader-background-color);
+    color: var(--subheader-text-color);
     padding: 10px 30px;
     display: grid;
     grid-template-columns: 64px fit-content(10px);
@@ -463,20 +470,6 @@ main .background-image {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         column-gap: 50px;
-}
-
-/* content (contact) */
-.contact-page table {
-    margin-left: auto;
-    margin-right: auto;
-}
-.contact-page table td {
-    height: 36px;
-    padding: 5px;
-}
-.contact-page table img {
-    width: 24px;
-    vertical-align: text-bottom;
 }
 
 /* footer */
