@@ -29,10 +29,11 @@
     --scrollbar-foreground-color: #00a6d3;
     --scrollbar-background-color: #f4f4f4;
 
+    --icon-shadow-color: rgb(0,0,0,0.5);
+
     --transparent-color: rgb(0,0,0,0);
-    --overlay-color: rgb(0,0,0,0.75);
+    --overlay-color: rgb(0,0,0,0.5);
     --preview-background-color: #000000;
-    --preview-frame-color: #5f757c;
 }
 
 /* navigation bar */
@@ -245,6 +246,7 @@ main .content a {
     margin-top: 15px;
     margin-bottom: 0px;
     transition: margin 0.1s;
+    filter: drop-shadow(2px 2px 0px var(--icon-shadow-color));
 }
 .portfolio-page .anchor-icon:hover {
     margin-top: 0px;
@@ -280,6 +282,7 @@ main .content a {
 .portfolio-page .entry-icon {
     border-radius: 50%;
     width: 64px;
+    filter: drop-shadow(3px 3px 0px var(--icon-shadow-color));
 }
 
 .portfolio-page .column-layout {
@@ -327,6 +330,7 @@ main .content a {
     border-radius: 16px;
     border: none;
     box-shadow: none;
+    filter: drop-shadow(3px 3px 0px var(--icon-shadow-color));
 }
 .portfolio-page .video-blocker {
     position: absolute;
@@ -344,6 +348,7 @@ main .content a {
     width: 100%;
     border-radius: 16px;
     cursor: pointer;
+    filter: drop-shadow(3px 3px 0px var(--icon-shadow-color));
 }
 
 @media only screen and (min-width: 1000px) {
@@ -397,11 +402,10 @@ main .content a {
 }
 .portfolio-page .overlay-video {
     display: none;
-    outline-style: solid;
-    outline-color: var(--preview-frame-color);
     background-color: var(--preview-background-color);
     border-radius: 16px;
     height: 80%;
+    filter: drop-shadow(5px 5px 0px var(--icon-shadow-color));
 }
 @media only screen and (max-width: 1000px) {
     .portfolio-page .overlay-video {
@@ -415,11 +419,10 @@ main .content a {
 }
 .portfolio-page .overlay-screenshot {
     display: none;
-    outline-style: solid;
-    outline-color:var(--preview-frame-color);
     background-color: var(--preview-background-color);
     border-radius: 16px;
     max-height: 80%;
+    filter: drop-shadow(5px 5px 0px var(--icon-shadow-color));
 }
 @media only screen and (max-width: 1000px) {
     .portfolio-page .overlay-screenshot {
