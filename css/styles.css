@@ -233,13 +233,14 @@ main .content a {
 }
 .portfolio-page .anchor-icon {
     width: 50px;
-    padding-top: 15px;
-    padding-bottom: 0px;
-    transition: padding 0.1s;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    transition: margin 0.1s;
 }
 .portfolio-page .anchor-icon:hover {
-    padding-top: 0px;
-    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 /* content (portfolio entries)*/
@@ -269,9 +270,7 @@ main .content a {
     }
 }
 .portfolio-page .entry-icon {
-    width: 64px;
-}
-.portfolio-page .entry-icon.inverse {
+    border-radius: 50%;
     width: 64px;
 }
 
@@ -447,9 +446,6 @@ main .content a {
 .contact-page table td {
     height: 36px;
     padding: 5px;
-}
-.contact-page table td img {
-    color: var(--normal-text-color);
 }
 .contact-page table .heightalign {
     height:24px;
