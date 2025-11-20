@@ -329,6 +329,22 @@ main .link-table img {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
+main .share-table {
+    margin-left: 0px;
+    margin-right: auto;
+}
+main .share-table.inverse {
+    margin-left: auto;
+    margin-right: 0px;
+}
+main .share-table td {
+    height: 36px;
+    padding: 5px;
+}
+main .share-table img {
+    width: 24px;
+    vertical-align: text-bottom;
+}
 .portfolio-page .medias {
     display: grid;
     grid-gap: 20px;

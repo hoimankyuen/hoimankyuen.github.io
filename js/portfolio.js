@@ -17,7 +17,7 @@ export function populatePageFromURL(search)
 function populatePage(group)
 {
     highlightGroupButton(group);
-    generateEntries(selectGroup(group));
+    generateEntries(group);
     setupScrollCheck();
     scrollToTop();
 }
@@ -26,19 +26,23 @@ function populatePage(group)
 
 export function setupGroupButtons()
 {
-    document.getElementById("group-featured").addEventListener("click", function(e) {
+    document.getElementById("group-featured").addEventListener("click", function(e)
+    {
         e.preventDefault();
         populatePage();
     });
-    document.getElementById("group-work").addEventListener("click", function(e) {
+    document.getElementById("group-work").addEventListener("click", function(e)
+    {
         e.preventDefault();
         populatePage("work");
     });
-    document.getElementById("group-jam").addEventListener("click", function(e) {
+    document.getElementById("group-jam").addEventListener("click", function(e)
+    {
         e.preventDefault();
         populatePage("jam");
     });
-    document.getElementById("group-other").addEventListener("click", function(e) {
+    document.getElementById("group-other").addEventListener("click", function(e)
+    {
         e.preventDefault();
         populatePage("other");
     });
@@ -55,10 +59,12 @@ function highlightGroupButton(group)
     document.getElementById(groupId).setAttribute("class", "anchor-button active");
 }
 
-function selectGroup(group)
+function selectEntryList(group)
 {
     switch (group)
     {
+        case "featured":
+            return data.featuredData;
         case "jam":
             return data.allJamData;
         case "work":
@@ -92,7 +98,8 @@ function generateEntryAnchorIcon(entry)
 
     clone.querySelector(".anchor-icon").setAttribute("src", entry.icon);
     clone.querySelector(".anchor-icon").setAttribute("alt", entry.name + " Icon");
-    clone.querySelector(".anchor-icon").addEventListener("click", function(e) {
+    clone.querySelector(".anchor-icon").addEventListener("click", function(e)
+    {
         e.preventDefault();
         scrollToEntry(entry.id);
     });
@@ -107,7 +114,7 @@ function clearExistingEntryBlocks()
     }
 }
 
-function generateEntryBlock(entry, index)
+function generateEntryBlock(group, entry, index)
 {
     const main = document.querySelector("div .entries");
     const template = document.getElementById("template-entry");
@@ -168,6 +175,14 @@ function generateEntryBlock(entry, index)
     }
     accomplishmentTemplate.hidden = true;
 
+    // share
+    clone.querySelector(".entry-share").addEventListener("click", function(e)
+    {
+        e.preventDefault();
+        navigator.clipboard.writeText("https://hoimankyuen.github.io/?type=" + group + "&entry=" + entry.id);
+        alert("Entry link shared to clipboard!");
+    });
+
     // videos
     const videoTemplate = clone.querySelector(".video-wrapper");
     for (let i = 0; i < entry.videos.length; i++) 
@@ -195,7 +210,7 @@ function generateEntryBlock(entry, index)
     }
     screenshotTemplate.hidden = true;
 
-    // aligment
+    // alignment
     if (index % 2 == 1)
     {
         clone.querySelector(".title").setAttribute("class", "title inverse");
@@ -203,11 +218,14 @@ function generateEntryBlock(entry, index)
         clone.querySelector(".entry-title").setAttribute("class", "entry-title inverse");
         clone.querySelector('.text-column').setAttribute("class", "text-column inverse");
         clone.querySelector('.media-column').setAttribute("class", "media-column inverse");
+        clone.querySelector('.share-table').setAttribute("class", "share-table inverse");
     }
 }
 
-function generateEntries(entryList)
+function generateEntries(group)
 {
+    let entryList = selectEntryList(group);
+
     // clear existing entries
     clearExistingEntryAnchorIcons();
     clearExistingEntryBlocks();
@@ -217,7 +235,7 @@ function generateEntries(entryList)
     {
         let entry = entryList[i];
         generateEntryAnchorIcon(entry);
-        generateEntryBlock(entry, i);
+        generateEntryBlock(group, entry, i);
     }
 
     // add listeners
