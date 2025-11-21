@@ -7,10 +7,17 @@ export function populatePageFromURL(search)
     let param = new URLSearchParams(search);
     let type = param.get("type");
     let entry = param.get("entry");
-    populatePage(type);
-    if (entry != null)
+    if (type != null)
     {
-        scrollToEntry(entry);
+        populatePage(type);
+        if (entry != null)
+        {
+            scrollToEntry(entry);
+        }
+    }
+    else
+    {
+        populatePage("featured");
     }
 }
 
