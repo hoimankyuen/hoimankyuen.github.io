@@ -27,7 +27,7 @@ export let data =
     videos: [
     ],
     screenshots: [
-        "/data/alkimiashadowing/screenshot1.png",
+        "/data/alkimiashadowing/screenshot1.PNG",
         "/data/alkimiashadowing/screenshot2.png",
         "/data/alkimiashadowing/screenshot3.png"
     ]
