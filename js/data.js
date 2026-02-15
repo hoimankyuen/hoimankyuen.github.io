@@ -11,6 +11,7 @@
 //   videos[],
 //   screenshots[]
 
+import {data as marketcartData} from "/data/marketcart/data.js";
 import {data as remoteStrandingData} from "/data/remotestranding/data.js";
 import {data as budgetShopData} from "/data/budgetshop/data.js";
 import {data as fairyEdibleData} from "/data/fairyedible/data.js";
@@ -34,19 +35,20 @@ export let featuredData = [
     remoteStrandingData,
     clubGrenadeData,
     xploroData,
-    alkimiaShadowingData,
-    navalFrontlineData,
-    smocData,
+    marketcartData,
+    budgetShopData,
     xrccData,
-    budgetShopData
+    navalFrontlineData,
+    alkimiaShadowingData
 ];
 
 export let allJamData = [
     remoteStrandingData,
-    alkimiaShadowingData,
-    smocData,
+    marketcartData,
+    fairyEdibleData,
     budgetShopData,
-    fairyEdibleData
+    smocData,
+    alkimiaShadowingData
 ];
 
 export let allWorkData = [
