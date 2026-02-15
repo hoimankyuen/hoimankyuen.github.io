@@ -11,7 +11,7 @@ export let data =
     ],
     descriptions: [
         "Fairy Edible Deliveries is a physics-based arcade game about eating as much of a single biscuit and still able to roll it down the hill to the customer. The game demands players to carefully carve away the biscuit within a set time, and is scored based on how much the biscuit was eaten.",
-        "he game is a game jam project developed in around 7 days using Unity mostly by myself, with a separate member handling music and sound effects. The game was ranked 39 out of 2284 entries from the same game jam, and was ranked 10th on innovation."
+        "The game is a game jam project developed in around 7 days using Unity mostly by myself, with a separate member handling music and sound effects. The game was ranked 39 out of 2284 entries from the same game jam, and was ranked 10th on innovation."
     ],
     links: [
         {
