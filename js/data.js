@@ -11,6 +11,7 @@
 //   videos[],
 //   screenshots[]
 
+import {data as lastWordsAjData} from "/data/lastwordsaj/data.js";
 import {data as marketcartData} from "/data/marketcart/data.js";
 import {data as remoteStrandingData} from "/data/remotestranding/data.js";
 import {data as budgetShopData} from "/data/budgetshop/data.js";
@@ -36,6 +37,7 @@ export let featuredData = [
     clubGrenadeData,
     xploroData,
     marketcartData,
+    lastWordsAjData,
     budgetShopData,
     xrccData,
     navalFrontlineData,
@@ -43,9 +45,10 @@ export let featuredData = [
 ];
 
 export let allJamData = [
-    remoteStrandingData,
+    lastWordsAjData,
     marketcartData,
     fairyEdibleData,
+    remoteStrandingData,
     budgetShopData,
     smocData,
     alkimiaShadowingData
