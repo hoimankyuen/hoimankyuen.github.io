@@ -11,6 +11,7 @@
 //   videos[],
 //   screenshots[]
 
+import {data as fuselageData} from "/data/fuselage/data.js";
 import {data as lastWordsAjData} from "/data/lastwordsaj/data.js";
 import {data as marketcartData} from "/data/marketcart/data.js";
 import {data as remoteStrandingData} from "/data/remotestranding/data.js";
@@ -34,17 +35,18 @@ import {data as planeTacticsData} from "/data/planetactics/data.js";
 
 export let featuredData = [
     remoteStrandingData,
+    fuselageData,
+    marketcartData,
     clubGrenadeData,
     xploroData,
-    marketcartData,
     lastWordsAjData,
     budgetShopData,
     xrccData,
-    navalFrontlineData,
-    alkimiaShadowingData
+    navalFrontlineData
 ];
 
 export let allJamData = [
+    fuselageData,
     lastWordsAjData,
     marketcartData,
     fairyEdibleData,
