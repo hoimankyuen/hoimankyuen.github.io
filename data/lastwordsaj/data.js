@@ -26,6 +26,7 @@ export let data =
         "Created a world space diegetic UI for the main menu."
     ],
     videos: [
+        "https://www.youtube.com/embed/z4FAGL6ciUo"
     ],
     screenshots: [
         "/data/lastwordsaj/screenshot1.png",
