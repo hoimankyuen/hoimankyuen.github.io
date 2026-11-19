@@ -20,6 +20,7 @@ import {data as fairyEdibleData} from "/data/fairyedible/data.js";
 import {data as smocData} from "/data/smoc/data.js";
 import {data as alkimiaShadowingData} from "/data/alkimiashadowing/data.js";
 
+import {data as bpclassicsData} from "/data/bpclassics/data.js";
 import {data as xploroData} from "/data/xploro/data.js";
 import {data as xrccData} from "/data/xrcc/data.js";
 import {data as navalFrontlineData} from "/data/navalfrontline/data.js";
@@ -35,10 +36,11 @@ import {data as planeTacticsData} from "/data/planetactics/data.js";
 
 export let featuredData = [
     remoteStrandingData,
+    bpclassicsData,
     fuselageData,
     marketcartData,
-    clubGrenadeData,
     xploroData,
+    clubGrenadeData,
     lastWordsAjData,
     budgetShopData,
     xrccData,
@@ -57,6 +59,7 @@ export let allJamData = [
 ];
 
 export let allWorkData = [
+    bpclassicsData,
     xploroData,
     xrccData,
     navalFrontlineData,
