@@ -47,7 +47,7 @@ export let featuredData = [
     navalFrontlineData
 ];
 
-export let allJamData = [
+export let allPersonalData = [
     fuselageData,
     lastWordsAjData,
     marketcartData,
@@ -77,7 +77,7 @@ export let allOtherData = [
 
 export function getEntryById(id)
 {
-    let data = getEntryByIdIn(id, allJamData);
+    let data = getEntryByIdIn(id, allPersonalData);
     if (data != null)
     {
         return data;

@@ -43,10 +43,10 @@ export function setupGroupButtons()
         e.preventDefault();
         populatePage("work");
     });
-    document.getElementById("group-jam").addEventListener("click", function(e)
+    document.getElementById("group-personal").addEventListener("click", function(e)
     {
         e.preventDefault();
-        populatePage("jam");
+        populatePage("personal");
     });
     document.getElementById("group-other").addEventListener("click", function(e)
     {
@@ -59,7 +59,7 @@ function highlightGroupButton(group)
 {
     document.getElementById("group-featured").setAttribute("class", "anchor-button");
     document.getElementById("group-work").setAttribute("class", "anchor-button");
-    document.getElementById("group-jam").setAttribute("class", "anchor-button");
+    document.getElementById("group-personal").setAttribute("class", "anchor-button");
     document.getElementById("group-other").setAttribute("class", "anchor-button");
 
     let groupId = group == null ? "group-featured" : "group-" + group;
@@ -72,8 +72,8 @@ function selectEntryList(group)
     {
         case "featured":
             return data.featuredData;
-        case "jam":
-            return data.allJamData;
+        case "personal":
+            return data.allPersonalData;
         case "work":
             return data.allWorkData;
         case "other":
