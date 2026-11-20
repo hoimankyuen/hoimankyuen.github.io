@@ -11,6 +11,7 @@
 //   videos[],
 //   screenshots[]
 
+import {data as luckyemilyData} from "/data/luckyemily/data.js";
 import {data as donotdisturbData} from "/data/donotdisturb/data.js";
 import {data as fuselageData} from "/data/fuselage/data.js";
 import {data as lastWordsAjData} from "/data/lastwordsaj/data.js";
@@ -36,6 +37,7 @@ import {data as dicingHerosData} from "/data/dicingheros/data.js";
 import {data as planeTacticsData} from "/data/planetactics/data.js";
 
 export let featuredData = [
+    luckyemilyData,
     donotdisturbData,
     bpclassicsData,
     marketcartData,
@@ -48,6 +50,7 @@ export let featuredData = [
 ];
 
 export let allPersonalData = [
+    luckyemilyData,
     donotdisturbData,
     fuselageData,
     lastWordsAjData,
