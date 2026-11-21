@@ -9,7 +9,7 @@ export let data =
     ],
     descriptions: [
         "Make games together with Lucky Emily is a meta game about rapid prototyping a game with a friend. You play as the experienced game developer friend of Emily, playtesting a twin-shooter prototype and provide directions for improvements, changing the prototype game directly. The game feature various upgrades for the prototype game for example weapons, enemies, bosses and different UI changes. In order to purchase these upgrades the player needs to hold on the any 7s that were shown on the in-game UI after each playtest section. The game ends when the player finally defeated the boss at wave 7 of the prototype game, and Emily will thank you for the hard work you've put in.",
-        "The game is a game jam project developed in around 7 days using Unity by a team of two. Ranking pending."
+        "The game is a game jam project developed in around 7 days using Unity by a team of two, and was ranked 3rd out of 894 entries from the same game jam."
     ],
     links: [
         {
